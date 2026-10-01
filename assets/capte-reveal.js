@@ -23,3 +23,12 @@
 
   items.forEach(function (el) { io.observe(el); });
 })();
+
+/* Pause decorative background video when the visitor prefers reduced motion. */
+(function () {
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.capte-hero__media video').forEach(function (v) {
+    v.removeAttribute('autoplay');
+    v.pause();
+  });
+})();

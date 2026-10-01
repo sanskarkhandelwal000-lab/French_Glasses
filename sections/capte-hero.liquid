@@ -1,5 +1,20 @@
 <section class="capte capte--dark capte-hero" id="capte-hero-{{ section.id }}">
-  {%- if section.settings.video != blank -%}
+  {%- if section.settings.use_theme_video -%}
+    <div class="capte-hero__media">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+        tabindex="-1"
+        poster="{{ 'capte-hero-poster.jpg' | asset_url }}"
+      >
+        <source src="{{ 'capte-hero.mp4' | asset_url }}" type="video/mp4">
+      </video>
+    </div>
+  {%- elsif section.settings.video != blank -%}
     <div class="capte-hero__media">
       {{
         section.settings.video
@@ -42,6 +57,10 @@
       </div>
     </div>
 
+    {%- if section.settings.virtual_notice != blank -%}
+      <p class="capte-hero__notice">{{ section.settings.virtual_notice }}</p>
+    {%- endif -%}
+
     {%- if section.blocks.size > 0 -%}
       <ul class="capte-hero__meta">
         {%- for block in section.blocks -%}
@@ -64,6 +83,8 @@
     { "type": "url", "id": "primary_link", "label": "Primary button link" },
     { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Nos gammes" },
     { "type": "url", "id": "secondary_link", "label": "Secondary button link" },
+    { "type": "checkbox", "id": "use_theme_video", "label": "Use the bundled hero video (assets/capte-hero.mp4)", "default": true },
+    { "type": "text", "id": "virtual_notice", "label": "Notice for AI-generated imagery", "info": "Required by French law (2023-451) when images contain AI-generated faces.", "default": "Images virtuelles" },
     { "type": "image_picker", "id": "image", "label": "Background image" },
     { "type": "video", "id": "video", "label": "Background video (overrides image)" }
   ],

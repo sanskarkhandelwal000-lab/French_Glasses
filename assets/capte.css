@@ -183,6 +183,16 @@
 
 .capte-hero__inner { display: grid; gap: 2.5rem; }
 
+.capte-hero__notice {
+  position: absolute;
+  top: clamp(1rem, 2vw, 1.5rem);
+  right: var(--capte-gutter);
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: rgba(244, 241, 236, 0.65);
+}
+
 .capte-hero__meta {
   display: flex;
   flex-wrap: wrap;
