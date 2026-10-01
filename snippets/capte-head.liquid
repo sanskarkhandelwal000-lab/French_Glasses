@@ -33,6 +33,12 @@
     font-style: normal;
     font-display: swap;
   }
+  :root {
+    --font-body--family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-subheading--family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-heading--family: 'Syne', 'DM Sans', system-ui, sans-serif;
+    --font-accent--family: 'Syne', 'DM Sans', system-ui, sans-serif;
+  }
 </style>
 {{ 'capte.css' | asset_url | stylesheet_tag }}
 <script>document.documentElement.classList.add('capte-js');</script>
