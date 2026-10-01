@@ -2,7 +2,7 @@
   <div class="capte__wrap">
     <div class="capte-lines__head capte-reveal">
       {%- if section.settings.eyebrow != blank -%}
-        <p class="capte__eyebrow"><span class="capte__rec" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
+        <p class="capte__eyebrow">{{ section.settings.eyebrow }}</p>
       {%- endif -%}
       <h2 class="capte__title capte__title--lg">{{ section.settings.heading }}</h2>
     </div>
@@ -15,17 +15,20 @@
           style="--line: {{ block.settings.accent }};"
           {{ block.shopify_attributes }}
         >
-          {%- if block.settings.image != blank -%}
-            <div class="capte-line__img">
+          <div class="capte-line__img">
+            {%- if block.settings.image != blank -%}
               {{
                 block.settings.image
-                | image_url: width: 1200
-                | image_tag: widths: '500, 800, 1200', sizes: '(min-width: 60em) 33vw, 100vw', loading: 'lazy', alt: block.settings.image.alt
+                | image_url: width: 1400
+                | image_tag: widths: '600, 900, 1400', sizes: '(min-width: 60em) 33vw, 100vw', loading: 'lazy', alt: block.settings.image.alt
               }}
-            </div>
-          {%- endif -%}
-          <span class="capte-line__tag">{{ block.settings.tag }}</span>
-          <div>
+            {%- elsif block.settings.asset_image != 'none' -%}
+              {%- render 'capte-asset-img', name: block.settings.asset_image, alt: block.settings.name, sizes: '(min-width: 60em) 33vw, 100vw' -%}
+            {%- endif -%}
+          </div>
+          <span class="capte-line__index" aria-hidden="true">0{{ forloop.index }}</span>
+          <div class="capte-line__body">
+            <span class="capte-line__tag">{{ block.settings.tag }}</span>
             <h3 class="capte-line__name">{{ block.settings.name }}</h3>
             <p class="capte-line__desc">{{ block.settings.description }}</p>
             <span class="capte-line__cta">{{ block.settings.cta }} <span aria-hidden="true">→</span></span>
@@ -55,7 +58,8 @@
         { "type": "text", "id": "cta", "label": "Link label", "default": "Découvrir" },
         { "type": "url", "id": "link", "label": "Link" },
         { "type": "color", "id": "accent", "label": "Accent colour", "default": "#8EC5E8" },
-        { "type": "image_picker", "id": "image", "label": "Image" }
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "select", "id": "asset_image", "label": "Bundled image (used when no image is picked)", "options": [ { "value": "none", "label": "None" }, { "value": "capte-glisse", "label": "Glisse" }, { "value": "capte-soleil", "label": "Soleil" }, { "value": "capte-clair", "label": "Clair" } ], "default": "none" }
       ]
     }
   ],

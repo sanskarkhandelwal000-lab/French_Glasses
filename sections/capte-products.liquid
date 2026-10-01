@@ -16,7 +16,7 @@
       <div class="capte-products__head capte-reveal">
         <div>
           {%- if section.settings.eyebrow != blank -%}
-            <p class="capte__eyebrow"><span class="capte__rec" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
+            <p class="capte__eyebrow">{{ section.settings.eyebrow }}</p>
           {%- endif -%}
           <h2 class="capte__title capte__title--lg">{{ section.settings.heading }}</h2>
         </div>
@@ -31,7 +31,17 @@
           {%- assign hover = product.media[1].preview_image -%}
           <li class="capte-card capte-reveal">
             <a class="capte-card__link" href="{{ product.url }}">
-              <div class="capte-card__media{% if hover %} capte-card__media--swap{% endif %}">
+              {%- liquid
+                assign accent = '#8A8590'
+                if product.type contains 'Glisse'
+                  assign accent = '#8EC5E8'
+                elsif product.type contains 'Soleil'
+                  assign accent = '#FFB23E'
+                elsif product.type contains 'Clair'
+                  assign accent = '#CFD6DE'
+                endif
+              -%}
+              <div class="capte-card__media{% if hover %} capte-card__media--swap{% endif %}" style="--accent: {{ accent }};">
                 {%- if image -%}
                   {{
                     image
@@ -47,7 +57,8 @@
                   {%- endif -%}
                 {%- else -%}
                   <span class="capte-card__noimg" aria-hidden="true">
-                    <img src="{{ 'capte-icon-rec.svg' | asset_url }}" alt="" width="56" height="56" loading="lazy">
+                    <span class="capte-card__noimg-mark">{{ product.type | default: 'Capté' }}</span>
+                    <span class="capte-card__noimg-name">{{ product.title | remove: 'Capté' | strip }}</span>
                   </span>
                 {%- endif -%}
                 {%- unless product.available -%}

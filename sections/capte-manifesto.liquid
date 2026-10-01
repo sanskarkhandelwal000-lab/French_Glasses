@@ -1,0 +1,25 @@
+<section class="capte capte-manifesto" id="capte-manifesto">
+  <div class="capte__wrap">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="capte__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    <p class="capte-manifesto__text" data-capte-words>{{ section.settings.text }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Capté — Manifeste",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Manifeste" },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Statement",
+      "default": "Sans les mains. Sans rien rater. Vous vivez le moment, vos lunettes le gardent pour toujours."
+    }
+  ],
+  "presets": [{ "name": "Capté — Manifeste" }]
+}
+{% endschema %}

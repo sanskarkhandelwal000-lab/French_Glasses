@@ -3,7 +3,7 @@
     <div class="capte-story__grid">
       <div class="capte-story__body capte-reveal">
         {%- if section.settings.eyebrow != blank -%}
-          <p class="capte__eyebrow"><span class="capte__rec" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
+          <p class="capte__eyebrow">{{ section.settings.eyebrow }}</p>
         {%- endif -%}
         <h2 class="capte__title capte__title--lg" style="margin-bottom: 2rem;">{{ section.settings.heading }}</h2>
         {{ section.settings.text }}
@@ -14,9 +14,11 @@
         {%- if section.settings.image != blank -%}
           {{
             section.settings.image
-            | image_url: width: 1200
-            | image_tag: widths: '600, 900, 1200', sizes: '(min-width: 60em) 40vw, 100vw', loading: 'lazy', alt: section.settings.image.alt
+            | image_url: width: 1400
+            | image_tag: widths: '600, 900, 1400', sizes: '(min-width: 60em) 45vw, 100vw', loading: 'lazy', alt: section.settings.image.alt
           }}
+        {%- elsif section.settings.use_bundled_image -%}
+          {%- render 'capte-asset-img', name: 'capte-story', alt: section.settings.image_alt, sizes: '(min-width: 60em) 45vw, 100vw' -%}
         {%- endif -%}
       </div>
     </div>
@@ -48,7 +50,9 @@
       "default": "<p>Capté est né d'une idée simple : une descente dans la poudreuse, un coucher de soleil entre amis, une conversation à l'autre bout du monde… On sort son téléphone, on cadre, et l'instant est déjà passé.</p><p>Avec Capté, vos lunettes deviennent votre caméra. Vous filmez ce que vous voyez, mains libres, sans quitter le moment.</p><p>Nous sommes une marque française, transparente sur nos produits, proche de nos clients et attachée à un usage respectueux : on filme ses aventures, pas les autres.</p>"
     },
     { "type": "text", "id": "signature", "label": "Signature", "default": "Capté. Tout est capté." },
-    { "type": "image_picker", "id": "image", "label": "Image" }
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "checkbox", "id": "use_bundled_image", "label": "Use the bundled image when none is picked", "default": true },
+    { "type": "text", "id": "image_alt", "label": "Bundled image alt text", "default": "Un skieur de dos sur une crête enneigée, face à une mer de nuages au coucher du soleil" }
   ],
   "blocks": [
     {

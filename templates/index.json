@@ -52,7 +52,8 @@
             "name": "Capté Glisse",
             "description": "Des masques de ski caméra pour garder chaque piste. « Chaque piste, captée. »",
             "accent": "#8EC5E8",
-            "link": "shopify://collections/all"
+            "link": "shopify://collections/all",
+            "asset_image": "capte-glisse"
           }
         },
         "l2": {
@@ -62,7 +63,8 @@
             "name": "Capté Soleil",
             "description": "Des lunettes de soleil connectées pour garder chaque été. « L'été, capté. »",
             "accent": "#FFB23E",
-            "link": "shopify://collections/all"
+            "link": "shopify://collections/all",
+            "asset_image": "capte-soleil"
           }
         },
         "l3": {
@@ -72,7 +74,8 @@
             "name": "Capté Clair",
             "description": "Des lunettes connectées à verres clairs pour votre quotidien. « Votre quotidien, capté. »",
             "accent": "#CFD6DE",
-            "link": "shopify://collections/all"
+            "link": "shopify://collections/all",
+            "asset_image": "capte-clair"
           }
         }
       },
@@ -81,7 +84,9 @@
         "l2",
         "l3"
       ],
-      "settings": {}
+      "settings": {
+        "eyebrow": "Trois gammes"
+      }
     },
     "capte_features": {
       "type": "capte-features",
@@ -183,7 +188,9 @@
         "v3",
         "v4"
       ],
-      "settings": {}
+      "settings": {
+        "use_bundled_image": true
+      }
     },
     "capte_faq": {
       "type": "capte-faq",
@@ -228,11 +235,72 @@
     "capte_products": {
       "type": "capte-products",
       "settings": {}
+    },
+    "capte_manifesto": {
+      "type": "capte-manifesto",
+      "settings": {
+        "eyebrow": "Manifeste",
+        "text": "Sans les mains. Sans rien rater. Vous vivez le moment, vos lunettes le gardent pour toujours."
+      }
+    },
+    "capte_marquee": {
+      "type": "capte-marquee",
+      "settings": {
+        "dark": true
+      },
+      "blocks": {
+        "m0": {
+          "type": "item",
+          "settings": {
+            "text": "Caméra 8 MP"
+          }
+        },
+        "m1": {
+          "type": "item",
+          "settings": {
+            "text": "Mains libres"
+          }
+        },
+        "m2": {
+          "type": "item",
+          "settings": {
+            "text": "Traduction par IA"
+          }
+        },
+        "m3": {
+          "type": "item",
+          "settings": {
+            "text": "Musique et appels"
+          }
+        },
+        "m4": {
+          "type": "item",
+          "settings": {
+            "text": "Assistant IA"
+          }
+        },
+        "m5": {
+          "type": "item",
+          "settings": {
+            "text": "Marque française"
+          }
+        }
+      },
+      "block_order": [
+        "m0",
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "m5"
+      ]
     }
   },
   "order": [
     "capte_hero",
+    "capte_manifesto",
     "capte_lines",
+    "capte_marquee",
     "capte_products",
     "capte_features",
     "capte_story",
