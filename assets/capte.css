@@ -948,6 +948,173 @@ body {
   .announcement-bar__text::before { animation: none; }
 }
 
+/* ---- Product page ------------------------------------------------------------ */
+
+.product-information { padding-block: clamp(1.5rem, 3vw, 3rem) clamp(3rem, 6vw, 5rem); }
+
+/* Gallery: soft-cornered frames on a lifted surface */
+.product-information .product-media-container,
+.product-information .product-media {
+  background: var(--capte-surface);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.product-information .product-media__image { transition: transform 1.2s var(--capte-ease); }
+.product-information .product-media-container:hover .product-media__image { transform: scale(1.03); }
+
+/* Intro: gamme label + REC tagline */
+.capte-pdp-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  font-family: var(--capte-font-body);
+}
+
+.capte-pdp-intro__gamme {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.capte-pdp-intro__gamme::before { content: ''; width: 0.4rem; height: 0.4rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+
+.capte-pdp-intro__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--capte-text-mute);
+}
+
+/* Title and price */
+.product-information h1 {
+  font-family: var(--capte-font-body) !important;
+  font-size: clamp(2.25rem, 3.6vw, 3.5rem) !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.product-information product-price,
+.product-information product-price .price {
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem) !important;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--capte-text);
+}
+
+/* Variant pills */
+.product-information .variant-option legend,
+.product-information .variant-option__legend {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--capte-text-mute);
+}
+
+.product-information .variant-option__button-label {
+  border-radius: 999px !important;
+  min-height: 3.1rem;
+  border-color: var(--capte-hairline-dark) !important;
+  background: var(--capte-surface) !important;
+  color: var(--capte-text-soft) !important;
+  font-size: 0.9rem;
+  transition: border-color 0.35s var(--capte-ease), color 0.35s var(--capte-ease), background-color 0.35s var(--capte-ease);
+}
+
+.product-information .variant-option__button-label:hover { border-color: rgba(244, 241, 236, 0.4) !important; color: var(--capte-text) !important; }
+
+.product-information .variant-option__button-label:has(input:checked) {
+  border-color: var(--capte-creme) !important;
+  background: var(--capte-creme) !important;
+  color: var(--capte-encre) !important;
+}
+
+/* Quantity and add to cart */
+.product-information .quantity-selector {
+  border-radius: 999px !important;
+  border-color: var(--capte-hairline-dark) !important;
+  background: var(--capte-surface);
+}
+
+.product-information .add-to-cart-button {
+  min-height: 3.6rem;
+  border-radius: 999px !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 40px -12px rgba(255, 77, 46, 0.55);
+  transition: transform 0.4s var(--capte-ease), box-shadow 0.4s var(--capte-ease), filter 0.4s var(--capte-ease);
+}
+
+.product-information .add-to-cart-button:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: 0 16px 48px -12px rgba(255, 77, 46, 0.7); }
+
+/* Description */
+.product-information .text-block.rte,
+.product-information .rte { color: var(--capte-text-soft); line-height: 1.7; }
+.product-information .rte ul { padding-left: 1.1rem; }
+.product-information .rte li::marker { color: var(--capte-rec); }
+
+/* Details: chips, accordion, reassurance */
+.capte-pdp-details { display: grid; gap: 1.75rem; font-family: var(--capte-font-body); color: var(--capte-text); }
+
+.capte-pdp-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.capte-pdp-chips li {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--capte-hairline-dark);
+  background: var(--capte-surface);
+  font-size: 0.8rem;
+  color: var(--capte-text-soft);
+}
+
+.capte-pdp-chips li:nth-child(5n + 1) { border-color: rgba(255, 77, 46, 0.4); color: var(--capte-text); }
+
+.capte-pdp-acc details { border-top: 1px solid var(--capte-hairline-dark); }
+.capte-pdp-acc details:last-child { border-bottom: 1px solid var(--capte-hairline-dark); }
+.capte-pdp-acc summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.2rem 0; font-size: 0.98rem; font-weight: 500; cursor: pointer; list-style: none; }
+.capte-pdp-acc summary::-webkit-details-marker { display: none; }
+.capte-pdp-acc summary::after { content: ''; flex: none; width: 0.75rem; height: 0.75rem; background: linear-gradient(currentColor, currentColor) center / 100% 1.5px no-repeat, linear-gradient(currentColor, currentColor) center / 1.5px 100% no-repeat; color: var(--capte-rec); transition: transform 0.5s var(--capte-ease); }
+.capte-pdp-acc details[open] summary::after { transform: rotate(45deg); }
+.capte-pdp-acc summary:focus-visible { outline: 2px solid var(--capte-rec); outline-offset: 2px; }
+.capte-pdp-acc__a { padding: 0 0 1.25rem; font-size: 0.92rem; line-height: 1.7; color: var(--capte-text-soft); }
+.capte-pdp-acc__a p { margin: 0; }
+
+.capte-pdp-trust { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.capte-pdp-trust li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  border-radius: 14px;
+  background: var(--capte-surface);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--capte-text-soft);
+}
+
+.capte-pdp-trust li::before { content: ''; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--capte-rec); }
+.capte-pdp-trust li:nth-child(2)::before { background: var(--capte-glacier); }
+.capte-pdp-trust li:nth-child(3)::before { background: var(--capte-ambre); }
+
+@media (max-width: 47.99em) {
+  .capte-pdp-trust { grid-template-columns: 1fr; }
+  .capte-pdp-trust li { flex-direction: row; align-items: center; }
+}
+
 /* ---- Stock Horizon pages: bring them into the system --------------------- */
 
 .header-logo__wordmark { display: block; width: auto; height: 20px; }

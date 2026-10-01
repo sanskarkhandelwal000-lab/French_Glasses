@@ -11,33 +11,14 @@
     "main": {
       "type": "product-information",
       "blocks": {
-        "disclosures_g9mWze": {
-          "type": "disclosures",
-          "name": "t:names.disclosures",
-          "settings": {
-            "heading": "Disclosures",
-            "heading_preset": "h5",
-            "open_by_default": false,
-            "icon": "caret",
-            "disclosure_heading_preset": "h6",
-            "text_color": "",
-            "dividers": true,
-            "divider_color": "{{ settings.color_palette.color2 }}",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
         "media-gallery": {
           "type": "_product-media-gallery",
           "static": true,
           "settings": {
             "media_presentation": "grid",
             "media_columns": "two",
-            "image_gap": 4,
-            "large_first_image": false,
+            "image_gap": 10,
+            "large_first_image": true,
             "slideshow_controls_style": "counter",
             "slideshow_mobile_controls_style": "dots",
             "thumbnail_position": "right",
@@ -45,8 +26,8 @@
             "thumbnail_radius": 0,
             "aspect_ratio": "adapt",
             "constrain_to_viewport": true,
-            "media_fit": "contain",
-            "media_radius": 0,
+            "media_fit": "cover",
+            "media_radius": 20,
             "extend_media": false,
             "zoom": true,
             "video_loop": false,
@@ -68,7 +49,7 @@
             "custom_width_mobile": 100,
             "height": "fit",
             "details_position": "flex-start",
-            "gap": 28,
+            "gap": 24,
             "sticky_details_desktop": true,
             "background_media": "none",
             "background_color": "",
@@ -79,7 +60,7 @@
             "border_opacity": 100,
             "border_color": "",
             "border_radius": 0,
-            "padding-block-start": 24,
+            "padding-block-start": 8,
             "padding-block-end": 24,
             "padding-inline-start": 0,
             "padding-inline-end": 0
@@ -257,17 +238,11 @@
                   "type": "add-to-cart",
                   "static": true,
                   "settings": {
-                    "style_class": "button",
-                    "custom_button_background": "{{ settings.color_palette.foreground }}",
-                    "custom_button_text": "{{ settings.color_palette.background }}",
-                    "custom_button_border": "{{ settings.color_palette.background }}"
+                    "style_class": "button-custom",
+                    "custom_button_background": "#FF4D2E",
+                    "custom_button_text": "#15151B",
+                    "custom_button_border": "#FF4D2E"
                   },
-                  "blocks": {}
-                },
-                "accelerated-checkout": {
-                  "type": "accelerated-checkout",
-                  "static": true,
-                  "settings": {},
                   "blocks": {}
                 }
               },
@@ -298,20 +273,30 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "capte_intro": {
+              "type": "capte-pdp-intro",
+              "settings": {
+                "tagline": "Lunettes caméra"
+              }
+            },
+            "capte_details": {
+              "type": "capte-pdp-details",
+              "settings": {}
             }
           },
           "block_order": [
+            "capte_intro",
             "group_icgrde",
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
-            "text_aEtTtq"
+            "text_aEtTtq",
+            "capte_details"
           ]
         }
       },
-      "block_order": [
-        "disclosures_g9mWze"
-      ],
+      "block_order": [],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
