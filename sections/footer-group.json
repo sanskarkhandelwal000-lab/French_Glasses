@@ -13,7 +13,9 @@
   "sections": {
     "capte_footer": {
       "type": "capte-footer",
-      "settings": {},
+      "settings": {
+        "news_heading": "Restez dans *le cadre*."
+      },
       "blocks": {
         "c1": {
           "type": "column",

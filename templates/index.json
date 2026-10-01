@@ -85,7 +85,8 @@
         "l3"
       ],
       "settings": {
-        "eyebrow": "Trois gammes"
+        "eyebrow": "Trois gammes",
+        "heading": "Une promesse, *trois façons* de la vivre."
       }
     },
     "capte_features": {
@@ -148,7 +149,9 @@
         "f5",
         "f6"
       ],
-      "settings": {}
+      "settings": {
+        "heading": "Vos lunettes deviennent *votre caméra*."
+      }
     },
     "capte_story": {
       "type": "capte-story",
@@ -189,7 +192,8 @@
         "v4"
       ],
       "settings": {
-        "use_bundled_image": true
+        "use_bundled_image": true,
+        "heading": "Les plus beaux moments ne se vivent pas *derrière un écran*."
       }
     },
     "capte_faq": {
@@ -230,11 +234,15 @@
         "q3",
         "q4"
       ],
-      "settings": {}
+      "settings": {
+        "heading": "T’as *capté* ? On vous explique."
+      }
     },
     "capte_products": {
       "type": "capte-products",
-      "settings": {}
+      "settings": {
+        "heading": "Choisissez *votre regard*."
+      }
     },
     "capte_manifesto": {
       "type": "capte-manifesto",

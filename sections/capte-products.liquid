@@ -18,7 +18,7 @@
           {%- if section.settings.eyebrow != blank -%}
             <p class="capte__eyebrow">{{ section.settings.eyebrow }}</p>
           {%- endif -%}
-          <h2 class="capte__title capte__title--lg">{{ section.settings.heading }}</h2>
+          <h2 class="capte__title capte__title--lg">{%- render 'capte-hl', text: section.settings.heading -%}</h2>
         </div>
         {%- if section.settings.link_label != blank -%}
           <a class="capte__btn capte__btn--ghost" href="{{ source.url }}">{{ section.settings.link_label }}</a>
@@ -67,7 +67,7 @@
               </div>
               <div class="capte-card__body">
                 {%- if product.type != blank -%}
-                  <p class="capte-card__type">{{ product.type }}</p>
+                  <p class="capte-card__type" style="--accent: {{ accent }};">{{ product.type }}</p>
                 {%- endif -%}
                 <h3 class="capte-card__title">{{ product.title }}</h3>
                 <p class="capte-card__price">
@@ -93,7 +93,7 @@
 {%- elsif request.design_mode -%}
   <div class="capte capte__section">
     <div class="capte__wrap">
-      <p class="capte__lead">{{ section.settings.heading }} : aucun produit dans cette collection. Cette section reste masquée sur la boutique tant qu'elle est vide.</p>
+      <p class="capte__lead">{{ section.settings.heading | remove: '*' }} : aucun produit dans cette collection. Cette section reste masquée sur la boutique tant qu'elle est vide.</p>
     </div>
   </div>
 {%- endif -%}
@@ -104,7 +104,7 @@
   "tag": "div",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "La collection" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Choisissez votre regard." },
+    { "type": "text", "id": "heading", "label": "Heading", "info": "Wrap words in *asterisks* to highlight them in colour.", "default": "Choisissez votre regard." },
     { "type": "collection", "id": "collection", "label": "Collection", "info": "Leave empty to show all products." },
     { "type": "range", "id": "limit", "label": "Products to show", "min": 2, "max": 12, "step": 1, "default": 6 },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "Tout voir" },

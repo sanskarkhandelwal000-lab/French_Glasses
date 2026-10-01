@@ -5,7 +5,7 @@
         {%- if section.settings.eyebrow != blank -%}
           <p class="capte__eyebrow">{{ section.settings.eyebrow }}</p>
         {%- endif -%}
-        <h2 class="capte__title capte__title--lg" style="margin-bottom: 2rem;">{{ section.settings.heading }}</h2>
+        <h2 class="capte__title capte__title--lg" style="margin-bottom: 2rem;">{%- render 'capte-hl', text: section.settings.heading -%}</h2>
         {{ section.settings.text }}
         <p class="capte-story__sign">{{ section.settings.signature }}</p>
       </div>
@@ -42,7 +42,7 @@
   "tag": "div",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "À propos" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Les plus beaux moments ne se vivent pas derrière un écran." },
+    { "type": "text", "id": "heading", "label": "Heading", "info": "Wrap words in *asterisks* to highlight them in colour.", "default": "Les plus beaux moments ne se vivent pas derrière un écran." },
     {
       "type": "richtext",
       "id": "text",

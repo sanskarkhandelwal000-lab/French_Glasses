@@ -3,7 +3,7 @@
     <div class="capte-footer__top">
       <div class="capte-footer__news">
         <p class="capte__eyebrow"><span class="capte__rec" aria-hidden="true"></span>{{ section.settings.news_eyebrow }}</p>
-        <h2 class="capte__title capte__title--md">{{ section.settings.news_heading }}</h2>
+        <h2 class="capte__title capte__title--md">{%- render 'capte-hl', text: section.settings.news_heading -%}</h2>
         <p class="capte-footer__news-text">{{ section.settings.news_text }}</p>
 
         {%- form 'customer', id: 'CapteFooterNewsletter', class: 'capte-footer__form' -%}
@@ -82,7 +82,7 @@
   "tag": "div",
   "settings": [
     { "type": "text", "id": "news_eyebrow", "label": "Newsletter eyebrow", "default": "Newsletter" },
-    { "type": "text", "id": "news_heading", "label": "Newsletter heading", "default": "Restez dans le cadre." },
+    { "type": "text", "id": "news_heading", "label": "Newsletter heading", "info": "Wrap words in *asterisks* to highlight them in colour.", "default": "Restez dans le cadre." },
     { "type": "textarea", "id": "news_text", "label": "Newsletter text", "default": "Nouveautés, conseils et coulisses de Capté, directement dans votre boîte mail." },
     { "type": "text", "id": "news_placeholder", "label": "Email placeholder", "default": "Votre adresse e-mail" },
     { "type": "text", "id": "news_button", "label": "Button label", "default": "Je m'inscris" },

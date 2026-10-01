@@ -768,6 +768,101 @@ body {
 .capte-footer__bottom p { margin: 0; }
 .capte-footer__legal { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 0; padding: 0; list-style: none; }
 
+/* ---- Colour highlights ------------------------------------------------------
+   One phrase per heading carries the brand light. Default: REC → Ambre
+   ("sunrise"); the gammes heading uses the three gamme colours. */
+
+.capte-hl {
+  font-style: normal;
+  background: linear-gradient(100deg, var(--capte-rec) 0%, #ff7a3d 45%, var(--capte-ambre) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+#capte-lines .capte-hl {
+  background-image: linear-gradient(100deg, var(--capte-glacier) 0%, var(--capte-ambre) 52%, var(--capte-brume) 100%);
+}
+
+.capte-features .capte-hl,
+.capte-faq .capte-hl { background-image: linear-gradient(100deg, var(--capte-rec) 0%, #ff8a5c 100%); }
+
+.capte-story-section .capte-hl { background-image: linear-gradient(100deg, var(--capte-ambre) 0%, var(--capte-rec) 100%); }
+
+.capte-footer .capte-hl { background-image: linear-gradient(100deg, var(--capte-rec), var(--capte-ambre)); }
+
+.capte__display .capte-hl { background-image: linear-gradient(100deg, var(--capte-creme), var(--capte-rec)); }
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .capte-hl { color: var(--capte-rec); background: none; }
+}
+
+/* Eyebrow rule fades in from REC red */
+.capte__eyebrow::before {
+  background: linear-gradient(90deg, var(--capte-rec), rgba(255, 77, 46, 0));
+  opacity: 1;
+}
+
+/* Fonctions: each row carries its own accent */
+.capte-feature { --acc: var(--capte-rec); position: relative; transition: background-color 0.6s var(--capte-ease); }
+.capte-feature:nth-child(6n + 2) { --acc: var(--capte-glacier); }
+.capte-feature:nth-child(6n + 3) { --acc: var(--capte-ambre); }
+.capte-feature:nth-child(6n + 4) { --acc: var(--capte-brume); }
+.capte-feature:nth-child(6n + 5) { --acc: #ff8a5c; }
+.capte-feature:nth-child(6n + 6) { --acc: var(--capte-glacier); }
+
+.capte-feature__num { color: var(--acc); }
+
+.capte-feature::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 0;
+  height: 1px;
+  background: var(--acc);
+  transition: width 0.9s var(--capte-ease);
+}
+
+.capte-feature:hover::before,
+.capte-feature.is-in::before { width: 3.5rem; }
+
+.capte-feature__icon {
+  padding: 0.45rem;
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, var(--acc) 14%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--acc) 30%, transparent);
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.capte-feature__title { transition: color 0.4s var(--capte-ease); }
+.capte-feature:hover .capte-feature__title { color: var(--acc); }
+
+/* Product cards: gamme label in its own colour */
+.capte-card__type { color: var(--accent, var(--capte-galet)); }
+
+/* Story values: an accent dot per value */
+.capte-values li { --acc: var(--capte-rec); }
+.capte-values li:nth-child(2) { --acc: var(--capte-glacier); }
+.capte-values li:nth-child(3) { --acc: var(--capte-ambre); }
+.capte-values li:nth-child(4) { --acc: var(--capte-brume); }
+.capte-values strong { display: flex; align-items: center; gap: 0.6rem; }
+.capte-values strong::before { content: ''; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--acc); box-shadow: 0 0 12px var(--acc); }
+.capte-values li { border-top-color: color-mix(in srgb, var(--acc) 35%, transparent); }
+
+/* Story signature: brand red on the final word */
+.capte-story__sign { background: linear-gradient(100deg, var(--capte-creme) 40%, var(--capte-rec)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* Hero stats: values lit in cream, a red tick before each */
+.capte-hero__meta strong::before { content: ''; display: inline-block; width: 0.35rem; height: 0.35rem; margin: 0 0.5rem 0.15rem 0; border-radius: 50%; background: var(--capte-rec); vertical-align: middle; }
+
+/* Marquee: alternate words pick up the gamme colours */
+.capte-marquee__group li:nth-child(3n + 2) { color: var(--capte-glacier); }
+.capte-marquee__group li:nth-child(3n + 3) { color: var(--capte-ambre); }
+
 /* ---- Stock Horizon pages: bring them into the system --------------------- */
 
 .header-logo__wordmark { display: block; width: auto; height: 20px; }

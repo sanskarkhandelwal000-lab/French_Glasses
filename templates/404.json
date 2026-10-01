@@ -96,7 +96,7 @@
       "type": "capte-products",
       "settings": {
         "eyebrow": "À découvrir",
-        "heading": "Vous aimerez aussi.",
+        "heading": "Vous aimerez *aussi*.",
         "limit": 3
       }
     }
