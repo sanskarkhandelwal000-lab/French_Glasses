@@ -97,7 +97,8 @@
       "settings": {
         "eyebrow": "À découvrir",
         "heading": "Vous aimerez *aussi*.",
-        "limit": 3
+        "limit": 3,
+        "pinned_product": "capte-clair-mt5"
       }
     }
   },

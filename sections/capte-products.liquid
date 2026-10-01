@@ -26,79 +26,24 @@
       </div>
 
       <ul class="capte-products__grid" role="list">
-        {%- for product in source.products limit: limit -%}
-          {%- liquid
-            # Cards are portrait: prefer a portrait photo as the front, the featured photo on hover
-            assign image = product.featured_media.preview_image
-            assign hover = product.media[1].preview_image
-            for m in product.media
-              if m.preview_image.aspect_ratio < 1
-                assign image = m.preview_image
-                if m.id != product.featured_media.id
-                  assign hover = product.featured_media.preview_image
-                endif
-                break
-              endif
-            endfor
-          -%}
-          <li class="capte-card capte-reveal">
-            <a class="capte-card__link" href="{{ product.url }}">
-              {%- liquid
-                assign accent = '#8A8590'
-                if product.type contains 'Glisse'
-                  assign accent = '#8EC5E8'
-                elsif product.type contains 'Soleil'
-                  assign accent = '#FFB23E'
-                elsif product.type contains 'Clair'
-                  assign accent = '#CFD6DE'
-                endif
-              -%}
-              <div class="capte-card__media{% if hover %} capte-card__media--swap{% endif %}" style="--accent: {{ accent }};">
-                {%- if image -%}
-                  {{
-                    image
-                    | image_url: width: 1200
-                    | image_tag: widths: '400, 600, 800, 1200', sizes: '(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw', loading: 'lazy', class: 'capte-card__img', alt: product.title
-                  }}
-                  {%- if hover -%}
-                    {{
-                      hover
-                      | image_url: width: 1200
-                      | image_tag: widths: '400, 600, 800, 1200', sizes: '(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw', loading: 'lazy', class: 'capte-card__img capte-card__img--hover', alt: ''
-                    }}
-                  {%- endif -%}
-                {%- else -%}
-                  <span class="capte-card__noimg" aria-hidden="true">
-                    <span class="capte-card__noimg-mark">{{ product.type | default: 'Capté' }}</span>
-                    <span class="capte-card__noimg-name">{{ product.title | remove: 'Capté' | strip }}</span>
-                  </span>
-                {%- endif -%}
-                {%- unless product.available -%}
-                  <span class="capte-card__badge">{{ 'products.product.sold_out' | t }}</span>
-                {%- endunless -%}
-              </div>
-              <div class="capte-card__body">
-                {%- if product.type != blank -%}
-                  <p class="capte-card__type" style="--accent: {{ accent }};">{{ product.type }}</p>
-                {%- endif -%}
-                <h3 class="capte-card__title">{{ product.title }}</h3>
-                <p class="capte-card__price">
-                  {%- if product.price_varies -%}
-                    À partir de {{ product.price_min | money -}}
-                  {%- else -%}
-                    {{- product.price | money -}}
-                  {%- endif -%}
-                  {%- if product.compare_at_price > product.price -%}
-                    <s>{{ product.compare_at_price | money }}</s>
-                  {%- endif -%}
-                </p>
-                {%- if product.variants.size > 1 -%}
-                  <p class="capte-card__variants">{{ product.variants.size }} {{ product.options.first | downcase }}</p>
-                {%- endif -%}
-              </div>
-            </a>
-          </li>
-        {%- endfor -%}
+        {%- liquid
+          assign pinned = section.settings.pinned_product
+          assign shown = 0
+          if pinned != blank and pinned.available != nil
+            render 'capte-product-card', product: pinned
+            assign shown = 1
+          endif
+          for product in source.products
+            if shown >= limit
+              break
+            endif
+            if pinned != blank and product.id == pinned.id
+              continue
+            endif
+            render 'capte-product-card', product: product
+            assign shown = shown | plus: 1
+          endfor
+        -%}
       </ul>
     </div>
   </section>
@@ -115,13 +60,56 @@
   "name": "Capté — Produits",
   "tag": "div",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "La collection" },
-    { "type": "text", "id": "heading", "label": "Heading", "info": "Wrap words in *asterisks* to highlight them in colour.", "default": "Choisissez votre regard." },
-    { "type": "collection", "id": "collection", "label": "Collection", "info": "Leave empty to show all products." },
-    { "type": "range", "id": "limit", "label": "Products to show", "min": 2, "max": 12, "step": 1, "default": 6 },
-    { "type": "text", "id": "link_label", "label": "Link label", "default": "Tout voir" },
-    { "type": "checkbox", "id": "dark", "label": "Dark background", "default": false }
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "La collection"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Wrap words in *asterisks* to highlight them in colour.",
+      "default": "Choisissez votre regard."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Leave empty to show all products."
+    },
+    {
+      "type": "product",
+      "id": "pinned_product",
+      "label": "Pinned product (shown first)"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Products to show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "Tout voir"
+    },
+    {
+      "type": "checkbox",
+      "id": "dark",
+      "label": "Dark background",
+      "default": false
+    }
   ],
-  "presets": [{ "name": "Capté — Produits" }]
+  "presets": [
+    {
+      "name": "Capté — Produits"
+    }
+  ]
 }
 {% endschema %}
