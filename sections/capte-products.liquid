@@ -1,0 +1,122 @@
+{%- liquid
+  assign source = section.settings.collection
+  if source == blank
+    assign source = collections.all
+  endif
+  assign limit = section.settings.limit
+-%}
+
+{%- comment -%}
+  Renders nothing on the storefront when the collection is empty, so Shopify's
+  placeholder products never appear. The theme editor shows a short hint instead.
+{%- endcomment -%}
+{%- if source.products_count > 0 -%}
+  <section class="capte capte__section capte-products{% if section.settings.dark %} capte--dark{% endif %}" lang="fr">
+    <div class="capte__wrap">
+      <div class="capte-products__head capte-reveal">
+        <div>
+          {%- if section.settings.eyebrow != blank -%}
+            <p class="capte__eyebrow">{{ section.settings.eyebrow }}</p>
+          {%- endif -%}
+          <h2 class="capte__title capte__title--lg">{%- render 'capte-hl', text: section.settings.heading -%}</h2>
+        </div>
+        {%- if section.settings.link_label != blank -%}
+          <a class="capte__btn capte__btn--ghost" href="{{ source.url }}">{{ section.settings.link_label }}</a>
+        {%- endif -%}
+      </div>
+
+      <ul class="capte-products__grid" role="list">
+        {%- liquid
+          assign pinned = section.settings.pinned_products
+          assign pinned_ids = ''
+          assign shown = 0
+          for product in pinned
+            if shown >= limit
+              break
+            endif
+            render 'capte-product-card', product: product
+            assign pinned_ids = pinned_ids | append: ',' | append: product.id | append: ','
+            assign shown = shown | plus: 1
+          endfor
+          for product in source.products
+            if shown >= limit
+              break
+            endif
+            assign key = ',' | append: product.id | append: ','
+            if pinned_ids contains key
+              continue
+            endif
+            render 'capte-product-card', product: product
+            assign shown = shown | plus: 1
+          endfor
+        -%}
+      </ul>
+    </div>
+  </section>
+{%- elsif request.design_mode -%}
+  <div class="capte capte__section">
+    <div class="capte__wrap">
+      <p class="capte__lead">{{ section.settings.heading | remove: '*' }} : aucun produit dans cette collection. Cette section reste masquée sur la boutique tant qu'elle est vide.</p>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Capté — Produits",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "La collection"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Wrap words in *asterisks* to highlight them in colour.",
+      "default": "Choisissez votre regard."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Leave empty to show all products."
+    },
+    {
+      "type": "product_list",
+      "id": "pinned_products",
+      "label": "Pinned products (shown first, in this order)",
+      "limit": 6
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Products to show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "Tout voir"
+    },
+    {
+      "type": "checkbox",
+      "id": "dark",
+      "label": "Dark background",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Capté — Produits"
+    }
+  ]
+}
+{% endschema %}
