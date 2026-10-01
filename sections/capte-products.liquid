@@ -27,8 +27,20 @@
 
       <ul class="capte-products__grid" role="list">
         {%- for product in source.products limit: limit -%}
-          {%- assign image = product.featured_media.preview_image -%}
-          {%- assign hover = product.media[1].preview_image -%}
+          {%- liquid
+            # Cards are portrait: prefer a portrait photo as the front, the featured photo on hover
+            assign image = product.featured_media.preview_image
+            assign hover = product.media[1].preview_image
+            for m in product.media
+              if m.preview_image.aspect_ratio < 1
+                assign image = m.preview_image
+                if m.id != product.featured_media.id
+                  assign hover = product.featured_media.preview_image
+                endif
+                break
+              endif
+            endfor
+          -%}
           <li class="capte-card capte-reveal">
             <a class="capte-card__link" href="{{ product.url }}">
               {%- liquid
