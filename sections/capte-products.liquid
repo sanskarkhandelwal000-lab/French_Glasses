@@ -27,17 +27,23 @@
 
       <ul class="capte-products__grid" role="list">
         {%- liquid
-          assign pinned = section.settings.pinned_product
+          assign pinned = section.settings.pinned_products
+          assign pinned_ids = ''
           assign shown = 0
-          if pinned != blank and pinned.available != nil
-            render 'capte-product-card', product: pinned
-            assign shown = 1
-          endif
+          for product in pinned
+            if shown >= limit
+              break
+            endif
+            render 'capte-product-card', product: product
+            assign pinned_ids = pinned_ids | append: ',' | append: product.id | append: ','
+            assign shown = shown | plus: 1
+          endfor
           for product in source.products
             if shown >= limit
               break
             endif
-            if pinned != blank and product.id == pinned.id
+            assign key = ',' | append: product.id | append: ','
+            if pinned_ids contains key
               continue
             endif
             render 'capte-product-card', product: product
@@ -80,9 +86,10 @@
       "info": "Leave empty to show all products."
     },
     {
-      "type": "product",
-      "id": "pinned_product",
-      "label": "Pinned product (shown first)"
+      "type": "product_list",
+      "id": "pinned_products",
+      "label": "Pinned products (shown first, in this order)",
+      "limit": 6
     },
     {
       "type": "range",
