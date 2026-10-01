@@ -16,6 +16,15 @@
   --capte-brume: #cfd6de;
   --capte-sable: #ebe6de;
 
+  /* Dark surfaces, from deepest to most lifted */
+  --capte-abyss: #0e0e12;
+  --capte-bg: #15151b;
+  --capte-surface: #1b1a21;
+  --capte-surface-2: #23222a;
+  --capte-text: #f4f1ec;
+  --capte-text-soft: rgba(244, 241, 236, 0.68);
+  --capte-text-mute: rgba(244, 241, 236, 0.46);
+
   --capte-font-display: 'Syne', 'DM Sans', system-ui, sans-serif;
   --capte-font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
@@ -42,18 +51,25 @@ body {
 .capte {
   position: relative;
   font-family: var(--capte-font-body);
-  color: var(--capte-encre);
-  background: var(--capte-creme);
+  color: var(--capte-text);
+  background: var(--capte-bg);
 }
 
 .capte *,
 .capte *::before,
 .capte *::after { box-sizing: border-box; }
 
-.capte--dark { background: var(--capte-encre); color: var(--capte-creme); }
+.capte--dark { background: var(--capte-bg); color: var(--capte-text); }
+
+/* Tonal rhythm down the page */
+.capte-marquee,
+.capte-products,
+.capte-story-section { background: var(--capte-surface); }
+.capte-footer { background: var(--capte-abyss); }
 
 /* Fine film grain on dark surfaces, for depth without imagery */
-.capte--dark::before {
+/* grain */
+.capte::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -63,7 +79,7 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-.capte--dark > * { position: relative; z-index: 1; }
+.capte > * { position: relative; z-index: 1; }
 
 .capte__wrap {
   width: 100%;
@@ -185,8 +201,9 @@ body {
 .capte__btn--ghost { border-color: currentColor; background: transparent; color: inherit; }
 .capte--dark .capte__btn--ghost::after { background: var(--capte-creme); }
 .capte--dark .capte__btn--ghost:hover { color: var(--capte-encre); border-color: var(--capte-creme); }
-.capte:not(.capte--dark) .capte__btn--ghost::after { background: var(--capte-encre); }
-.capte:not(.capte--dark) .capte__btn--ghost:hover { color: var(--capte-creme); border-color: var(--capte-encre); }
+.capte .capte__btn--ghost { border-color: rgba(244, 241, 236, 0.35); }
+.capte .capte__btn--ghost::after { background: var(--capte-creme); }
+.capte .capte__btn--ghost:hover { color: var(--capte-encre); border-color: var(--capte-creme); }
 
 .capte__btns { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: clamp(2rem, 3vw, 2.75rem); }
 
@@ -201,7 +218,7 @@ body {
   isolation: isolate;
 }
 
-.capte-hero.capte--dark::before { display: none; }
+.capte-hero::before { display: none; }
 
 .capte-hero__media { position: absolute; inset: 0; z-index: -2; }
 
@@ -262,7 +279,12 @@ body {
 
 /* ---- Manifesto ------------------------------------------------------------ */
 
-.capte-manifesto { padding-block: clamp(6rem, 14vw, 12rem); }
+.capte-manifesto {
+  padding-block: clamp(6rem, 14vw, 12rem);
+  background:
+    radial-gradient(ellipse 60% 70% at 85% 30%, rgba(255, 77, 46, 0.07), transparent 70%),
+    var(--capte-bg);
+}
 
 .capte-manifesto__text {
   max-width: 68rem;
@@ -275,7 +297,7 @@ body {
 }
 
 .capte-word { transition: opacity 0.4s linear, color 0.4s linear; }
-.capte-js .capte-word { opacity: 0.16; }
+.capte-js .capte-word { opacity: 0.18; }
 .capte-js .capte-word.is-lit { opacity: 1; }
 
 /* ---- Gammes ---------------------------------------------------------------- */
@@ -397,7 +419,6 @@ body {
   overflow: hidden;
 }
 
-.capte-marquee:not(.capte--dark) { border-color: var(--capte-hairline-light); }
 
 .capte-marquee__track { display: flex; width: max-content; animation: capte-marquee 38s linear infinite; }
 .capte-marquee:hover .capte-marquee__track { animation-play-state: paused; }
@@ -448,10 +469,8 @@ body {
   aspect-ratio: 4 / 5;
   border-radius: var(--capte-radius);
   overflow: hidden;
-  background: var(--capte-sable);
+  background: var(--capte-surface-2);
 }
-
-.capte--dark .capte-card__media { background: var(--capte-graphite); }
 
 .capte-card__img {
   position: absolute;
@@ -475,8 +494,9 @@ body {
   justify-content: space-between;
   padding: clamp(1.25rem, 2vw, 1.75rem);
   background:
-    radial-gradient(ellipse at 50% 120%, var(--accent), transparent 62%),
-    linear-gradient(180deg, var(--capte-encre), var(--capte-graphite));
+    radial-gradient(ellipse at 50% 125%, var(--accent), transparent 60%),
+    linear-gradient(180deg, var(--capte-abyss), var(--capte-bg));
+  box-shadow: inset 0 0 0 1px var(--capte-hairline-dark);
   color: var(--capte-creme);
   transition: transform 1.4s var(--capte-ease);
 }
@@ -554,7 +574,7 @@ body {
 .capte-feature__num { padding-top: 0.35rem; font-size: 0.78rem; letter-spacing: 0.12em; color: var(--capte-galet); font-variant-numeric: tabular-nums; }
 .capte-feature__icon { width: 2.5rem; height: 2.5rem; opacity: 0.95; }
 .capte-feature__title { margin: 0 0 0.5rem; font-size: clamp(1.25rem, 1.8vw, 1.6rem); font-weight: 500; letter-spacing: -0.025em; }
-.capte-feature__text { margin: 0; max-width: 30rem; font-size: 0.98rem; line-height: 1.6; color: rgba(244, 241, 236, 0.62); }
+.capte-feature__text { margin: 0; max-width: 30rem; font-size: 0.98rem; line-height: 1.6; color: var(--capte-text-soft); }
 
 @media (max-width: 40em) {
   .capte-feature { grid-template-columns: 2.25rem 1fr; }
@@ -576,14 +596,14 @@ body {
 }
 
 .capte-story__body .capte__title { margin-bottom: clamp(1.75rem, 3vw, 2.5rem); }
-.capte-story__body p { margin: 0 0 1.15rem; max-width: 34rem; font-size: clamp(1rem, 1.2vw, 1.1rem); line-height: 1.75; color: var(--capte-graphite); }
+.capte-story__body p { margin: 0 0 1.15rem; max-width: 34rem; font-size: clamp(1rem, 1.2vw, 1.1rem); line-height: 1.75; color: var(--capte-text-soft); }
 .capte-story__sign { margin-top: 2.25rem; font-family: var(--capte-font-display); font-weight: 800; font-size: 1.15rem; letter-spacing: 0.02em; text-transform: uppercase; }
 
 .capte-story__media {
   aspect-ratio: 4 / 5;
   border-radius: var(--capte-radius);
   overflow: hidden;
-  background: var(--capte-brume);
+  background: var(--capte-surface-2);
 }
 
 .capte-story__media img {
@@ -603,9 +623,9 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
 }
 
-.capte-values li { padding-top: 1.5rem; border-top: 1px solid var(--capte-hairline-light); }
+.capte-values li { padding-top: 1.5rem; border-top: 1px solid var(--capte-hairline-dark); }
 .capte-values strong { display: block; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 500; letter-spacing: -0.02em; }
-.capte-values span { font-size: 0.95rem; line-height: 1.55; color: var(--capte-galet); }
+.capte-values span { font-size: 0.95rem; line-height: 1.55; color: var(--capte-text-mute); }
 
 /* ---- FAQ ----------------------------------------------------------------- */
 
