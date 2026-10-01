@@ -1,0 +1,39 @@
+{%- comment -%}
+  Capté design layer: brand fonts (self-hosted from the brand kit), tokens and component styles.
+  Rendered once from layout/theme.liquid.
+{%- endcomment -%}
+{{ 'Syne-ExtraBold.ttf' | asset_url | preload_tag: as: 'font', type: 'font/ttf', crossorigin: 'anonymous' }}
+{{ 'DMSans-Regular.ttf' | asset_url | preload_tag: as: 'font', type: 'font/ttf', crossorigin: 'anonymous' }}
+<style>
+  @font-face {
+    font-family: 'Syne';
+    src: url('{{ 'Syne-ExtraBold.ttf' | asset_url }}') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('{{ 'DMSans-Regular.ttf' | asset_url }}') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('{{ 'DMSans-Medium.ttf' | asset_url }}') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('{{ 'DMSans-Bold.ttf' | asset_url }}') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
+{{ 'capte.css' | asset_url | stylesheet_tag }}
+<script>document.documentElement.classList.add('capte-js');</script>
+<script src="{{ 'capte-reveal.js' | asset_url }}" defer></script>

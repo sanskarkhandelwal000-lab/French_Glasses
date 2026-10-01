@@ -1,0 +1,79 @@
+<section class="capte capte--dark capte__section" id="capte-features">
+  <div class="capte__wrap">
+    <div class="capte-features__head capte-reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="capte__eyebrow"><span class="capte__rec" aria-hidden="true"></span>{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="capte__title capte__title--lg">{{ section.settings.heading }}</h2>
+      {%- if section.settings.lead != blank -%}
+        <p class="capte__lead">{{ section.settings.lead }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="capte-features__grid">
+      {%- for block in section.blocks -%}
+        <article class="capte-feature capte-reveal" {{ block.shopify_attributes }}>
+          <img
+            src="{{ block.settings.icon | append: '-cream.svg' | prepend: 'icon-' | asset_url }}"
+            alt=""
+            width="44"
+            height="44"
+            loading="lazy"
+          >
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Capté — Fonctions",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Fonctions" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Vos lunettes deviennent votre caméra." },
+    { "type": "textarea", "id": "lead", "label": "Lead", "default": "Photo, vidéo, musique, appels et assistant IA : tout ce qu'il faut, sans sortir votre téléphone." }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Fonction",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "camera", "label": "Camera" },
+            { "value": "translation", "label": "Translation" },
+            { "value": "sound", "label": "Sound" },
+            { "value": "controls", "label": "Controls" },
+            { "value": "transfer", "label": "Transfer" },
+            { "value": "battery", "label": "Battery" },
+            { "value": "app", "label": "App" }
+          ],
+          "default": "camera"
+        },
+        { "type": "text", "id": "title", "label": "Title", "default": "Photo et vidéo" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Une caméra 8 MP intégrée pour filmer en vue subjective." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Capté — Fonctions",
+      "blocks": [
+        { "type": "feature", "settings": { "icon": "camera", "title": "Photo et vidéo", "text": "Une caméra 8 MP intégrée pour filmer en vue subjective, mains libres." } },
+        { "type": "feature", "settings": { "icon": "translation", "title": "Traduction par IA", "text": "T'as capté ? Maintenant, oui. Comprenez votre interlocuteur en temps réel." } },
+        { "type": "feature", "settings": { "icon": "sound", "title": "Musique et appels", "text": "Écoutez votre musique et passez vos appels sans rien dans les oreilles." } },
+        { "type": "feature", "settings": { "icon": "controls", "title": "Assistant IA", "text": "Posez vos questions à voix haute, la réponse arrive dans l'oreille." } },
+        { "type": "feature", "settings": { "icon": "app", "title": "Application mobile", "text": "Retrouvez et partagez vos souvenirs depuis votre téléphone." } },
+        { "type": "feature", "settings": { "icon": "transfer", "title": "Transfert simple", "text": "Vos photos et vidéos passent des lunettes au téléphone en quelques gestes." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
