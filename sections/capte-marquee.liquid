@@ -1,4 +1,4 @@
-<section class="capte capte-marquee{% if section.settings.dark %} capte--dark{% endif %}" aria-label="{{ section.settings.label | escape }}">
+<section class="capte capte-marquee{% if section.settings.dark %} capte--dark{% endif %}" aria-label="{{ section.settings.label | escape }}" lang="fr">
   <div class="capte-marquee__track">
     {%- for i in (1..2) -%}
       <ul class="capte-marquee__group" role="list" {% if i == 2 %}aria-hidden="true"{% endif %}>

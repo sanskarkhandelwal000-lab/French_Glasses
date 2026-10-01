@@ -239,8 +239,11 @@
     "capte_manifesto": {
       "type": "capte-manifesto",
       "settings": {
-        "eyebrow": "Manifeste",
-        "text": "Sans les mains. Sans rien rater. Vous vivez le moment, vos lunettes le gardent pour toujours."
+        "line_1": "Sans les mains.",
+        "line_2": "Sans rien rater.",
+        "text": "Vous vivez le moment, vos lunettes le gardent pour toujours.",
+        "hud_left": "Vue subjective",
+        "hud_right": "8 MP · Mains libres"
       }
     },
     "capte_marquee": {

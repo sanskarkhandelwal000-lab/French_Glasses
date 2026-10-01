@@ -277,28 +277,90 @@ body {
   .capte-hero__notice { top: auto; bottom: 0.9rem; }
 }
 
-/* ---- Manifesto ------------------------------------------------------------ */
+/* ---- Manifesto: camera viewfinder ------------------------------------- */
 
 .capte-manifesto {
   padding-block: clamp(3.5rem, 7vw, 6.5rem) clamp(1.5rem, 3vw, 2.5rem);
   background:
-    radial-gradient(ellipse 60% 70% at 85% 30%, rgba(255, 77, 46, 0.07), transparent 70%),
+    radial-gradient(ellipse 55% 60% at 50% 45%, rgba(255, 77, 46, 0.08), transparent 70%),
     var(--capte-bg);
 }
 
-.capte-manifesto__text {
-  max-width: 68rem;
+.capte-vf {
+  --vf-pad: clamp(1.25rem, 3vw, 2.5rem);
+  --vf-corner: clamp(1.25rem, 2.4vw, 2.25rem);
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: clamp(20rem, 38vw, 30rem);
+  padding: var(--vf-pad);
+  text-align: center;
+}
+
+.capte-vf__corner {
+  position: absolute;
+  width: var(--vf-corner);
+  height: var(--vf-corner);
+  border: 0 solid rgba(244, 241, 236, 0.55);
+}
+
+.capte-vf__corner--tl { top: 0; left: 0; border-top-width: 1.5px; border-left-width: 1.5px; }
+.capte-vf__corner--tr { top: 0; right: 0; border-top-width: 1.5px; border-right-width: 1.5px; }
+.capte-vf__corner--bl { bottom: 0; left: 0; border-bottom-width: 1.5px; border-left-width: 1.5px; }
+.capte-vf__corner--br { bottom: 0; right: 0; border-bottom-width: 1.5px; border-right-width: 1.5px; }
+
+.capte-vf__hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--capte-text-mute);
+  font-variant-numeric: tabular-nums;
+}
+
+.capte-vf__rec { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--capte-text); }
+.capte-vf__tc { color: var(--capte-text-soft); }
+
+.capte-vf__body {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: clamp(1.25rem, 2.4vw, 2rem);
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.capte-vf__lines {
+  display: grid;
+  gap: 0.1em;
   margin: 0;
-  font-size: clamp(1.9rem, 4.6vw, 4.25rem);
-  font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: -0.035em;
+  font-family: var(--capte-font-display);
+  font-weight: 800;
+  font-size: clamp(1.75rem, 5.4vw, 5.25rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.capte-vf__line { display: block; }
+
+.capte-vf__line--outline { color: var(--capte-rec); }
+
+.capte-vf__sub {
+  max-width: 30rem;
+  margin: 0;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--capte-text-soft);
   text-wrap: balance;
 }
 
-.capte-word { transition: opacity 0.4s linear, color 0.4s linear; }
-.capte-js .capte-word { opacity: 0.18; }
-.capte-js .capte-word.is-lit { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .capte-js .capte-vf__line.capte-reveal:nth-child(2) { transition-delay: 0.15s; }
+  .capte-js .capte-vf__sub.capte-reveal { transition-delay: 0.3s; }
+}
 
 /* ---- Gammes ---------------------------------------------------------------- */
 
@@ -728,5 +790,4 @@ body {
   .capte-line,
   .capte__btn,
   .capte-line__img img { transition: none; }
-  .capte-js .capte-word { opacity: 1; }
 }

@@ -1,9 +1,31 @@
-<section class="capte capte-manifesto" id="capte-manifesto">
+<section class="capte capte-manifesto" id="capte-manifesto" lang="fr">
   <div class="capte__wrap">
-    {%- if section.settings.eyebrow != blank -%}
-      <p class="capte__eyebrow">{{ section.settings.eyebrow }}</p>
-    {%- endif -%}
-    <p class="capte-manifesto__text" data-capte-words>{{ section.settings.text }}</p>
+    <div class="capte-vf">
+      <span class="capte-vf__corner capte-vf__corner--tl" aria-hidden="true"></span>
+      <span class="capte-vf__corner capte-vf__corner--tr" aria-hidden="true"></span>
+      <span class="capte-vf__corner capte-vf__corner--bl" aria-hidden="true"></span>
+      <span class="capte-vf__corner capte-vf__corner--br" aria-hidden="true"></span>
+
+      <div class="capte-vf__hud" aria-hidden="true">
+        <span class="capte-vf__rec"><span class="capte__rec"></span>REC</span>
+        <span class="capte-vf__tc" data-capte-timecode>00:00:00</span>
+      </div>
+
+      <div class="capte-vf__body">
+        <h2 class="capte-vf__lines">
+          <span class="capte-vf__line capte-reveal">{{ section.settings.line_1 }}</span>
+          <span class="capte-vf__line capte-vf__line--outline capte-reveal">{{ section.settings.line_2 }}</span>
+        </h2>
+        {%- if section.settings.text != blank -%}
+          <p class="capte-vf__sub capte-reveal">{{ section.settings.text }}</p>
+        {%- endif -%}
+      </div>
+
+      <div class="capte-vf__hud capte-vf__hud--bottom" aria-hidden="true">
+        <span>{{ section.settings.hud_left }}</span>
+        <span>{{ section.settings.hud_right }}</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -12,13 +34,16 @@
   "name": "Capté — Manifeste",
   "tag": "div",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Manifeste" },
+    { "type": "text", "id": "line_1", "label": "Line 1", "default": "Sans les mains." },
+    { "type": "text", "id": "line_2", "label": "Line 2 (accent colour)", "default": "Sans rien rater." },
     {
       "type": "textarea",
       "id": "text",
-      "label": "Statement",
-      "default": "Sans les mains. Sans rien rater. Vous vivez le moment, vos lunettes le gardent pour toujours."
-    }
+      "label": "Supporting line",
+      "default": "Vous vivez le moment, vos lunettes le gardent pour toujours."
+    },
+    { "type": "text", "id": "hud_left", "label": "Viewfinder caption, left", "default": "Vue subjective" },
+    { "type": "text", "id": "hud_right", "label": "Viewfinder caption, right", "default": "8 MP · Mains libres" }
   ],
   "presets": [{ "name": "Capté — Manifeste" }]
 }

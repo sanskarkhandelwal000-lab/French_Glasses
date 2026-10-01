@@ -1,4 +1,4 @@
-/* Capté — motion layer: reveal-on-scroll, word-by-word manifesto, image parallax.
+/* Capté — motion layer: reveal-on-scroll, viewfinder timecode, image parallax.
    Everything degrades to a static, fully visible page without JS or with reduced motion. */
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -30,27 +30,31 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
-  /* Manifesto: split into words that light up as the paragraph crosses the viewport. */
-  var statements = document.querySelectorAll('[data-capte-words]');
-  statements.forEach(function (el) {
-    var words = el.textContent.trim().split(/\s+/);
-    el.setAttribute('aria-label', el.textContent.trim());
-    el.innerHTML = words
-      .map(function (w) { return '<span class="capte-word" aria-hidden="true">' + w + '</span>'; })
-      .join(' ');
-  });
+  /* Manifesto viewfinder: a running timecode while it is on screen. */
+  var tcs = document.querySelectorAll('[data-capte-timecode]');
+  if (tcs.length && !reduce && 'IntersectionObserver' in window) {
+    tcs.forEach(function (tc) {
+      var start = null, frame = null;
+      var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+      var tick = function (t) {
+        if (start === null) start = t;
+        var ms = t - start;
+        tc.textContent = pad(Math.floor(ms / 60000) % 60) + ':' + pad(Math.floor(ms / 1000) % 60) + ':' + pad(Math.floor((ms % 1000) / 40));
+        frame = requestAnimationFrame(tick);
+      };
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && frame === null) frame = requestAnimationFrame(tick);
+          if (!e.isIntersecting && frame !== null) { cancelAnimationFrame(frame); frame = null; }
+        });
+      }).observe(tc);
+    });
+  }
 
   var parallax = document.querySelectorAll('.capte-story__media img');
 
   function onScroll() {
     var vh = window.innerHeight;
-    statements.forEach(function (el) {
-      var r = el.getBoundingClientRect();
-      var progress = (vh * 0.85 - r.top) / (r.height + vh * 0.35);
-      var spans = el.querySelectorAll('.capte-word');
-      var lit = Math.round(Math.max(0, Math.min(1, progress)) * spans.length);
-      spans.forEach(function (s, i) { s.classList.toggle('is-lit', i < lit); });
-    });
     parallax.forEach(function (img) {
       var r = img.parentElement.getBoundingClientRect();
       if (r.bottom < 0 || r.top > vh) return;
@@ -59,10 +63,7 @@
     });
   }
 
-  if (reduce) {
-    document.querySelectorAll('.capte-word').forEach(function (s) { s.classList.add('is-lit'); });
-    return;
-  }
+  if (reduce) return;
 
   /* Horizon scrolls inside .page-wrapper rather than the window. */
   var scroller = document.querySelector('.page-wrapper');
