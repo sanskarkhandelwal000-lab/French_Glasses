@@ -242,7 +242,7 @@
       "type": "capte-products",
       "settings": {
         "heading": "Choisissez *votre regard*.",
-        "pinned_products": ["capte-clair-cl02", "capte-clair-mt5"]
+        "pinned_products": ["capte-clair-mt5"]
       }
     },
     "capte_manifesto": {
