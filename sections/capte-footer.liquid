@@ -1,0 +1,117 @@
+<footer class="capte capte--dark capte-footer">
+  <div class="capte__wrap">
+    <div class="capte-footer__top">
+      <div class="capte-footer__news">
+        <p class="capte__eyebrow"><span class="capte__rec" aria-hidden="true"></span>{{ section.settings.news_eyebrow }}</p>
+        <h2 class="capte__title capte__title--md">{{ section.settings.news_heading }}</h2>
+        <p class="capte-footer__news-text">{{ section.settings.news_text }}</p>
+
+        {%- form 'customer', id: 'CapteFooterNewsletter', class: 'capte-footer__form' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          {%- if form.posted_successfully? -%}
+            <p class="capte-footer__msg" role="status">{{ section.settings.news_success }}</p>
+          {%- else -%}
+            <label class="visually-hidden" for="CapteFooterEmail">{{ section.settings.news_placeholder }}</label>
+            <input
+              id="CapteFooterEmail"
+              type="email"
+              name="contact[email]"
+              autocomplete="email"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              required
+              placeholder="{{ section.settings.news_placeholder }}"
+              {% if form.errors %}aria-invalid="true" aria-describedby="CapteFooterError"{% endif %}
+            >
+            <button type="submit" class="capte__btn capte__btn--primary">{{ section.settings.news_button }}</button>
+            {%- if form.errors -%}
+              <p class="capte-footer__msg capte-footer__msg--error" id="CapteFooterError" role="alert">
+                {{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}
+              </p>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+
+      <nav class="capte-footer__cols" aria-label="{{ section.settings.nav_label | escape }}">
+        {%- for block in section.blocks -%}
+          <div class="capte-footer__col" {{ block.shopify_attributes }}>
+            <p class="capte-footer__col-title">{{ block.settings.title }}</p>
+            <ul role="list">
+              {%- if block.settings.menu != blank and block.settings.menu.links.size > 0 -%}
+                {%- for link in block.settings.menu.links -%}
+                  <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {%- endfor -%}
+              {%- else -%}
+                {%- for i in (1..5) -%}
+                  {%- capture label_key %}label_{{ i }}{% endcapture -%}
+                  {%- capture url_key %}url_{{ i }}{% endcapture -%}
+                  {%- assign label = block.settings[label_key] -%}
+                  {%- if label != blank -%}
+                    <li><a href="{{ block.settings[url_key] | default: '#' }}">{{ label }}</a></li>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            </ul>
+          </div>
+        {%- endfor -%}
+      </nav>
+    </div>
+
+    <div class="capte-footer__brand" aria-hidden="true">
+      <img src="{{ 'capte-wordmark-cream.svg' | asset_url }}" alt="" width="1200" height="213" loading="lazy">
+    </div>
+
+    <div class="capte-footer__bottom">
+      <p>© {{ 'now' | date: '%Y' }} {{ section.settings.legal_name }} · {{ section.settings.tagline }}</p>
+      {%- if shop.policies.size > 0 -%}
+        <ul class="capte-footer__legal" role="list">
+          {%- for policy in shop.policies -%}
+            <li><a href="{{ policy.url }}">{{ policy.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Capté — Pied de page",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "news_eyebrow", "label": "Newsletter eyebrow", "default": "Newsletter" },
+    { "type": "text", "id": "news_heading", "label": "Newsletter heading", "default": "Restez dans le cadre." },
+    { "type": "textarea", "id": "news_text", "label": "Newsletter text", "default": "Nouveautés, conseils et coulisses de Capté, directement dans votre boîte mail." },
+    { "type": "text", "id": "news_placeholder", "label": "Email placeholder", "default": "Votre adresse e-mail" },
+    { "type": "text", "id": "news_button", "label": "Button label", "default": "Je m'inscris" },
+    { "type": "text", "id": "news_success", "label": "Success message", "default": "Merci, c'est capté. À très vite dans votre boîte mail." },
+    { "type": "text", "id": "nav_label", "label": "Navigation label (accessibility)", "default": "Pied de page" },
+    { "type": "text", "id": "legal_name", "label": "Legal name", "default": "Capté" },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Tout est capté." }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Colonne de liens",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Liens" },
+        { "type": "link_list", "id": "menu", "label": "Menu", "info": "Optional. When set, replaces the links below." },
+        { "type": "text", "id": "label_1", "label": "Link 1 label" },
+        { "type": "url", "id": "url_1", "label": "Link 1" },
+        { "type": "text", "id": "label_2", "label": "Link 2 label" },
+        { "type": "url", "id": "url_2", "label": "Link 2" },
+        { "type": "text", "id": "label_3", "label": "Link 3 label" },
+        { "type": "url", "id": "url_3", "label": "Link 3" },
+        { "type": "text", "id": "label_4", "label": "Link 4 label" },
+        { "type": "url", "id": "url_4", "label": "Link 4" },
+        { "type": "text", "id": "label_5", "label": "Link 5 label" },
+        { "type": "url", "id": "url_5", "label": "Link 5" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Capté — Pied de page" }]
+}
+{% endschema %}

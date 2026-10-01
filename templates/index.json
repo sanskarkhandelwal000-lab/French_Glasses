@@ -50,7 +50,7 @@
           "settings": {
             "tag": "Ski & montagne",
             "name": "Capté Glisse",
-            "description": "Des masques de ski caméra pour garder chaque piste. « Chaque piste, captée. »",
+            "description": "Des masques de ski caméra pour garder chaque piste. « Chaque piste, captée. »",
             "accent": "#8EC5E8",
             "link": "shopify://collections/all"
           }
@@ -60,7 +60,7 @@
           "settings": {
             "tag": "Été & plein air",
             "name": "Capté Soleil",
-            "description": "Des lunettes de soleil connectées pour garder chaque été. « L'été, capté. »",
+            "description": "Des lunettes de soleil connectées pour garder chaque été. « L'été, capté. »",
             "accent": "#FFB23E",
             "link": "shopify://collections/all"
           }
@@ -70,7 +70,7 @@
           "settings": {
             "tag": "Au quotidien",
             "name": "Capté Clair",
-            "description": "Des lunettes connectées à verres clairs pour votre quotidien. « Votre quotidien, capté. »",
+            "description": "Des lunettes connectées à verres clairs pour votre quotidien. « Votre quotidien, capté. »",
             "accent": "#CFD6DE",
             "link": "shopify://collections/all"
           }
@@ -99,7 +99,7 @@
           "settings": {
             "icon": "translation",
             "title": "Traduction par IA",
-            "text": "T'as capté ? Maintenant, oui. Comprenez votre interlocuteur en temps réel."
+            "text": "T'as capté ? Maintenant, oui. Comprenez votre interlocuteur en temps réel."
           }
         },
         "f3": {
@@ -191,28 +191,28 @@
         "q1": {
           "type": "item",
           "settings": {
-            "question": "Comment fonctionne la caméra ?",
+            "question": "Comment fonctionne la caméra ?",
             "answer": "<p>Une caméra 8 MP est intégrée à la monture. Vous prenez des photos et des vidéos en vue subjective, mains libres.</p>"
           }
         },
         "q2": {
           "type": "item",
           "settings": {
-            "question": "Les lunettes traduisent-elles en direct ?",
+            "question": "Les lunettes traduisent-elles en direct ?",
             "answer": "<p>Oui, la traduction par IA fait partie des fonctions de la gamme.</p>"
           }
         },
         "q3": {
           "type": "item",
           "settings": {
-            "question": "Puis-je mettre des verres correcteurs ?",
+            "question": "Puis-je mettre des verres correcteurs ?",
             "answer": "<p>La compatibilité avec la correction visuelle dépend du modèle. Écrivez-nous avant de commander, nous vous répondrons précisément.</p>"
           }
         },
         "q4": {
           "type": "item",
           "settings": {
-            "question": "Quel usage est respectueux de la vie privée ?",
+            "question": "Quel usage est respectueux de la vie privée ?",
             "answer": "<p>On filme ses aventures et ses proches, jamais des inconnus. Respectez toujours les personnes autour de vous et la réglementation en vigueur.</p>"
           }
         }
@@ -224,11 +224,16 @@
         "q4"
       ],
       "settings": {}
+    },
+    "capte_products": {
+      "type": "capte-products",
+      "settings": {}
     }
   },
   "order": [
     "capte_hero",
     "capte_lines",
+    "capte_products",
     "capte_features",
     "capte_story",
     "capte_faq"

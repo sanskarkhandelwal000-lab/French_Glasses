@@ -338,6 +338,142 @@
 .capte-faq summary:focus-visible { outline: 2px solid var(--capte-rec); outline-offset: 2px; }
 .capte-faq__a { max-width: 40rem; padding: 0 0 1.75rem; font-size: 1rem; line-height: 1.7; color: rgba(244, 241, 236, 0.72); }
 
+/* ---- Product grid -------------------------------------------------------- */
+
+.capte-products__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.capte-products__grid {
+  display: grid;
+  gap: clamp(1.75rem, 3vw, 2.75rem) clamp(0.75rem, 1.5vw, 1.25rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+}
+
+.capte-card__link { display: block; color: inherit; text-decoration: none; }
+.capte-card__link:focus-visible { outline: 2px solid var(--capte-rec); outline-offset: 4px; border-radius: 1.5rem; }
+
+.capte-card__media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: #ebe6de;
+}
+
+.capte--dark .capte-card__media { background: var(--capte-graphite); }
+
+.capte-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--capte-ease), opacity 0.6s var(--capte-ease);
+}
+
+.capte-card__img--hover { opacity: 0; }
+.capte-card__link:hover .capte-card__img { transform: scale(1.04); }
+.capte-card__link:hover .capte-card__media--swap .capte-card__img--hover { opacity: 1; }
+
+.capte-card__noimg { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0.35; }
+
+.capte-card__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: var(--capte-encre);
+  color: var(--capte-creme);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.capte-card__body { padding: 1.1rem 0.25rem 0; }
+.capte-card__type { margin: 0 0 0.35rem; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--capte-galet); }
+.capte-card__title { margin: 0 0 0.4rem; font-family: var(--capte-font-body); font-size: 1.05rem; font-weight: 500; letter-spacing: 0; text-transform: none; }
+.capte-card__price { margin: 0; font-size: 0.95rem; opacity: 0.85; }
+.capte-card__price s { margin-left: 0.5rem; opacity: 0.55; }
+.capte-card__variants { margin: 0.35rem 0 0; font-size: 0.8rem; color: var(--capte-galet); }
+
+/* ---- Footer -------------------------------------------------------------- */
+
+.capte-footer { padding-block: clamp(4rem, 8vw, 7rem) 2rem; }
+
+.capte-footer__top {
+  display: grid;
+  gap: clamp(3rem, 6vw, 6rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 60em) {
+  .capte-footer__top { grid-template-columns: 1.1fr 1fr; }
+}
+
+.capte-footer__news-text { max-width: 28rem; margin: 1rem 0 1.75rem; line-height: 1.6; color: rgba(244, 241, 236, 0.7); }
+
+.capte-footer__form { display: flex; flex-wrap: wrap; gap: 0.75rem; max-width: 32rem; }
+
+.capte-footer__form input[type='email'] {
+  flex: 1 1 14rem;
+  min-height: 3.25rem;
+  padding: 0 1.4rem;
+  border: 1px solid rgba(244, 241, 236, 0.25);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--capte-creme);
+  font: 400 1rem var(--capte-font-body);
+}
+
+.capte-footer__form input[type='email']::placeholder { color: rgba(244, 241, 236, 0.5); }
+.capte-footer__form input[type='email']:focus-visible { outline: 2px solid var(--capte-rec); outline-offset: 2px; border-color: transparent; }
+.capte-footer__msg { flex-basis: 100%; margin: 0.25rem 0 0; font-size: 0.9rem; color: rgba(244, 241, 236, 0.8); }
+.capte-footer__msg--error { color: var(--capte-rec); }
+
+.capte-footer__cols { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); }
+.capte-footer__col-title { margin: 0 0 1.1rem; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--capte-galet); }
+.capte-footer__col ul { display: grid; gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
+.capte-footer a { color: rgba(244, 241, 236, 0.82); text-decoration: none; transition: color 0.3s var(--capte-ease); }
+.capte-footer a:hover { color: var(--capte-creme); }
+.capte-footer a:focus-visible { outline: 2px solid var(--capte-rec); outline-offset: 3px; }
+
+.capte-footer__brand { margin: clamp(4rem, 9vw, 8rem) 0 2rem; opacity: 0.95; }
+.capte-footer__brand img { display: block; width: 100%; height: auto; }
+
+.capte-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(244, 241, 236, 0.14);
+  font-size: 0.8rem;
+  color: rgba(244, 241, 236, 0.55);
+}
+
+.capte-footer__bottom p { margin: 0; }
+.capte-footer__legal { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 0; padding: 0; list-style: none; }
+
+/* ---- Theme-wide polish on stock Horizon pages ----------------------------- */
+
+::selection { background: var(--capte-rec); color: var(--capte-encre); }
+
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+/* Hero sits under the transparent home header */
+.template-index .capte-hero,
+.capte-hero:first-child { margin-top: 0; }
+
 /* ---- Reveal on scroll (progressive enhancement) -------------------------- */
 
 @media (prefers-reduced-motion: no-preference) {

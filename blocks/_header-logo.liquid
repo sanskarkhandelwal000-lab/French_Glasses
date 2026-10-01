@@ -57,14 +57,25 @@
     {% endif %}
     data-testid="header-logo"
   >
-    {% render 'image',
-      image: settings.logo,
-      class: 'header-logo__image',
-      height: settings.logo_height,
-      alt_text_fallback: alt_text_fallback,
-      text_fallback: shop.name,
-      style: logo_style
-    %}
+    {%- if settings.logo == blank -%}
+      {%- comment -%} Capté wordmark from the brand kit until a logo is uploaded in theme settings {%- endcomment -%}
+      <img
+        src="{{ 'capte-wordmark-ink.svg' | asset_url }}"
+        class="header-logo__wordmark"
+        alt="{{ alt_text_fallback | escape }}"
+        width="124"
+        height="22"
+      >
+    {%- else -%}
+      {% render 'image',
+        image: settings.logo,
+        class: 'header-logo__image',
+        height: settings.logo_height,
+        alt_text_fallback: alt_text_fallback,
+        text_fallback: shop.name,
+        style: logo_style
+      %}
+    {%- endif -%}
   </span>
 
   {% if use_inverse_logo %}
@@ -72,14 +83,24 @@
       class="header-logo__transparent-header-image-container"
       data-testid="header-logo-inverse"
     >
-      {% render 'image',
-        image: inverse_logo,
-        class: 'header-logo__image',
-        height: settings.logo_height,
-        alt_text_fallback: alt_text_fallback,
-        text_fallback: shop.name,
-        style: inverse_logo_style
-      %}
+      {%- if inverse_logo == blank -%}
+        <img
+          src="{{ 'capte-wordmark-cream.svg' | asset_url }}"
+          class="header-logo__wordmark"
+          alt="{{ alt_text_fallback | escape }}"
+          width="124"
+          height="22"
+        >
+      {%- else -%}
+        {% render 'image',
+          image: inverse_logo,
+          class: 'header-logo__image',
+          height: settings.logo_height,
+          alt_text_fallback: alt_text_fallback,
+          text_fallback: shop.name,
+          style: inverse_logo_style
+        %}
+      {%- endif -%}
     </span>
   {% endif %}
 </a>
@@ -130,6 +151,16 @@
     @media screen and (min-width: 750px) {
       height: var(--header-logo-image-height);
       width: var(--header-logo-image-width);
+    }
+  }
+
+  .header-logo__wordmark {
+    display: block;
+    width: auto;
+    height: 20px;
+
+    @media screen and (min-width: 750px) {
+      height: 22px;
     }
   }
 

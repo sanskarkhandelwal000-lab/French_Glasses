@@ -465,10 +465,114 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "capte_features": {
+      "type": "capte-features",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon": "camera",
+            "title": "Photo et vidéo",
+            "text": "Une caméra 8 MP intégrée pour filmer en vue subjective, mains libres."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon": "translation",
+            "title": "Traduction par IA",
+            "text": "T'as capté ? Maintenant, oui. Comprenez votre interlocuteur en temps réel."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon": "sound",
+            "title": "Musique et appels",
+            "text": "Écoutez votre musique et passez vos appels sans rien dans les oreilles."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "icon": "controls",
+            "title": "Assistant IA",
+            "text": "Posez vos questions à voix haute, la réponse arrive dans l'oreille."
+          }
+        },
+        "f5": {
+          "type": "feature",
+          "settings": {
+            "icon": "app",
+            "title": "Application mobile",
+            "text": "Retrouvez et partagez vos souvenirs depuis votre téléphone."
+          }
+        },
+        "f6": {
+          "type": "feature",
+          "settings": {
+            "icon": "transfer",
+            "title": "Transfert simple",
+            "text": "Vos photos et vidéos passent des lunettes au téléphone en quelques gestes."
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
+      "settings": {}
+    },
+    "capte_faq": {
+      "type": "capte-faq",
+      "blocks": {
+        "q1": {
+          "type": "item",
+          "settings": {
+            "question": "Comment fonctionne la caméra ?",
+            "answer": "<p>Une caméra 8 MP est intégrée à la monture. Vous prenez des photos et des vidéos en vue subjective, mains libres.</p>"
+          }
+        },
+        "q2": {
+          "type": "item",
+          "settings": {
+            "question": "Les lunettes traduisent-elles en direct ?",
+            "answer": "<p>Oui, la traduction par IA fait partie des fonctions de la gamme.</p>"
+          }
+        },
+        "q3": {
+          "type": "item",
+          "settings": {
+            "question": "Puis-je mettre des verres correcteurs ?",
+            "answer": "<p>La compatibilité avec la correction visuelle dépend du modèle. Écrivez-nous avant de commander, nous vous répondrons précisément.</p>"
+          }
+        },
+        "q4": {
+          "type": "item",
+          "settings": {
+            "question": "Quel usage est respectueux de la vie privée ?",
+            "answer": "<p>On filme ses aventures et ses proches, jamais des inconnus. Respectez toujours les personnes autour de vous et la réglementation en vigueur.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "main",
+    "capte_features",
+    "capte_faq",
     "product_recommendations_qggXJq"
   ]
 }
