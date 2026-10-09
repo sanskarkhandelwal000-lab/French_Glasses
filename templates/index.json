@@ -8,278 +8,314 @@
  * ------------------------------------------------------------
  */{
   "sections": {
-    "hero_jVaWmY": {
-      "type": "hero",
+    "capte_hero": {
+      "type": "capte-hero",
       "blocks": {
-        "text_YLPk4p": {
-          "type": "text",
-          "name": "t:names.heading",
+        "s1": {
+          "type": "stat",
           "settings": {
-            "text": "<p>Browse our latest products</p>",
-            "text_color": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "value": "8 MP",
+            "label": "caméra intégrée"
+          }
         },
-        "button_H9gpTf": {
-          "type": "button",
-          "name": "t:names.button",
+        "s2": {
+          "type": "stat",
           "settings": {
-            "label": "Shop all",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button-custom",
-            "custom_button_background": "rgba(0,0,0,0)",
-            "custom_button_text": "{{ settings.color_palette.background }}",
-            "custom_button_border": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
+            "value": "IA",
+            "label": "traduction et assistant"
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Mains libres",
+            "label": "photo, vidéo, appels"
+          }
         }
       },
       "block_order": [
-        "text_YLPk4p",
-        "button_H9gpTf"
+        "s1",
+        "s2",
+        "s3"
       ],
-      "name": "t:names.hero",
       "settings": {
-        "media_type_1": "image",
-        "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
-        "media_type_1_mobile": "image",
-        "media_type_2_mobile": "image",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
-        "vertical_alignment": "flex-end",
-        "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 24,
-        "section_width": "page-width",
-        "section_height": "medium",
-        "section_height_custom": 50,
-        "background_color": "rgba(0,0,0,0)",
-        "toggle_overlay": true,
-        "overlay_color": "#12121266",
-        "overlay_style": "solid",
-        "gradient_direction": "to bottom",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
-        "padding-block-start": 100,
-        "padding-block-end": 72
+        "use_theme_video": true
       }
     },
-    "product_list_fa6P9H": {
-      "type": "product-list",
+    "capte_lines": {
+      "type": "capte-lines",
       "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
+        "l1": {
+          "type": "line",
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
+            "tag": "Ski & montagne",
+            "name": "Capté Glisse",
+            "description": "Des masques de ski caméra pour garder chaque piste. « Chaque piste, captée. »",
+            "accent": "#8EC5E8",
+            "link": "shopify://collections/all",
+            "asset_image": "capte-glisse"
+          }
         },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
+        "l2": {
+          "type": "line",
           "settings": {
-            "product_card_gap": 4,
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
-          ]
+            "tag": "Été & plein air",
+            "name": "Capté Soleil",
+            "description": "Des lunettes de soleil connectées pour garder chaque été. « L'été, capté. »",
+            "accent": "#FFB23E",
+            "link": "shopify://collections/all",
+            "asset_image": "capte-soleil"
+          }
+        },
+        "l3": {
+          "type": "line",
+          "settings": {
+            "tag": "Au quotidien",
+            "name": "Capté Clair",
+            "description": "Des lunettes connectées à verres clairs pour votre quotidien. « Votre quotidien, capté. »",
+            "accent": "#CFD6DE",
+            "link": "shopify://collections/all",
+            "asset_image": "capte-clair"
+          }
         }
       },
-      "name": "t:names.product_list",
+      "block_order": [
+        "l1",
+        "l2",
+        "l3"
+      ],
       "settings": {
-        "collection": "all",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "eyebrow": "Trois gammes",
+        "heading": "Une promesse, *trois façons* de la vivre."
       }
+    },
+    "capte_features": {
+      "type": "capte-features",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon": "camera",
+            "title": "Photo et vidéo",
+            "text": "Une caméra 8 MP intégrée pour filmer en vue subjective, mains libres."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon": "translation",
+            "title": "Traduction par IA",
+            "text": "T'as capté ? Maintenant, oui. Comprenez votre interlocuteur en temps réel."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon": "sound",
+            "title": "Musique et appels",
+            "text": "Écoutez votre musique et passez vos appels sans rien dans les oreilles."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "icon": "controls",
+            "title": "Assistant IA",
+            "text": "Posez vos questions à voix haute, la réponse arrive dans l'oreille."
+          }
+        },
+        "f5": {
+          "type": "feature",
+          "settings": {
+            "icon": "app",
+            "title": "Application mobile",
+            "text": "Retrouvez et partagez vos souvenirs depuis votre téléphone."
+          }
+        },
+        "f6": {
+          "type": "feature",
+          "settings": {
+            "icon": "transfer",
+            "title": "Transfert simple",
+            "text": "Vos photos et vidéos passent des lunettes au téléphone en quelques gestes."
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
+      "settings": {
+        "heading": "Vos lunettes deviennent *votre caméra*."
+      }
+    },
+    "capte_story": {
+      "type": "capte-story",
+      "blocks": {
+        "v1": {
+          "type": "value",
+          "settings": {
+            "title": "Vrai",
+            "text": "De vraies images, de vraies fonctions, de vrais prix."
+          }
+        },
+        "v2": {
+          "type": "value",
+          "settings": {
+            "title": "Libre",
+            "text": "Mains libres, pour vivre le moment."
+          }
+        },
+        "v3": {
+          "type": "value",
+          "settings": {
+            "title": "Respectueux",
+            "text": "On filme ses aventures et ses proches, jamais des inconnus."
+          }
+        },
+        "v4": {
+          "type": "value",
+          "settings": {
+            "title": "Proche",
+            "text": "Une marque française qui vous répond en français."
+          }
+        }
+      },
+      "block_order": [
+        "v1",
+        "v2",
+        "v3",
+        "v4"
+      ],
+      "settings": {
+        "use_bundled_image": true,
+        "heading": "Les plus beaux moments ne se vivent pas *derrière un écran*."
+      }
+    },
+    "capte_faq": {
+      "type": "capte-faq",
+      "blocks": {
+        "q1": {
+          "type": "item",
+          "settings": {
+            "question": "Comment fonctionne la caméra ?",
+            "answer": "<p>Une caméra 8 MP est intégrée à la monture. Vous prenez des photos et des vidéos en vue subjective, mains libres.</p>"
+          }
+        },
+        "q2": {
+          "type": "item",
+          "settings": {
+            "question": "Les lunettes traduisent-elles en direct ?",
+            "answer": "<p>Oui, la traduction par IA fait partie des fonctions de la gamme.</p>"
+          }
+        },
+        "q3": {
+          "type": "item",
+          "settings": {
+            "question": "Puis-je mettre des verres correcteurs ?",
+            "answer": "<p>La compatibilité avec la correction visuelle dépend du modèle. Écrivez-nous avant de commander, nous vous répondrons précisément.</p>"
+          }
+        },
+        "q4": {
+          "type": "item",
+          "settings": {
+            "question": "Quel usage est respectueux de la vie privée ?",
+            "answer": "<p>On filme ses aventures et ses proches, jamais des inconnus. Respectez toujours les personnes autour de vous et la réglementation en vigueur.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "settings": {
+        "heading": "T’as *capté* ? On vous explique."
+      }
+    },
+    "capte_products": {
+      "type": "capte-products",
+      "settings": {
+        "heading": "Choisissez *votre regard*.",
+        "pinned_products": ["capte-clair-mt5"]
+      }
+    },
+    "capte_manifesto": {
+      "type": "capte-manifesto",
+      "settings": {
+        "line_1": "Sans les mains.",
+        "line_2": "Sans rien rater.",
+        "text": "Vous vivez le moment, vos lunettes le gardent pour toujours.",
+        "hud_left": "Vue subjective",
+        "hud_right": "8 MP · Mains libres"
+      }
+    },
+    "capte_marquee": {
+      "type": "capte-marquee",
+      "settings": {
+        "dark": true
+      },
+      "blocks": {
+        "m0": {
+          "type": "item",
+          "settings": {
+            "text": "Caméra 8 MP"
+          }
+        },
+        "m1": {
+          "type": "item",
+          "settings": {
+            "text": "Mains libres"
+          }
+        },
+        "m2": {
+          "type": "item",
+          "settings": {
+            "text": "Traduction par IA"
+          }
+        },
+        "m3": {
+          "type": "item",
+          "settings": {
+            "text": "Musique et appels"
+          }
+        },
+        "m4": {
+          "type": "item",
+          "settings": {
+            "text": "Assistant IA"
+          }
+        },
+        "m5": {
+          "type": "item",
+          "settings": {
+            "text": "Marque française"
+          }
+        }
+      },
+      "block_order": [
+        "m0",
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "m5"
+      ]
     }
   },
   "order": [
-    "hero_jVaWmY",
-    "product_list_fa6P9H"
+    "capte_hero",
+    "capte_manifesto",
+    "capte_lines",
+    "capte_marquee",
+    "capte_products",
+    "capte_features",
+    "capte_story",
+    "capte_faq"
   ]
 }

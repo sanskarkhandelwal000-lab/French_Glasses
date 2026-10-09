@@ -1,0 +1,27 @@
+{%- liquid
+  assign product = closest.product
+  assign accent = '#8A8590'
+  if product.type contains 'Glisse'
+    assign accent = '#8EC5E8'
+  elsif product.type contains 'Soleil'
+    assign accent = '#FFB23E'
+  elsif product.type contains 'Clair'
+    assign accent = '#CFD6DE'
+  endif
+-%}
+<div class="capte-pdp-intro" style="--accent: {{ accent }};" lang="fr" {{ block.shopify_attributes }}>
+  <span class="capte-pdp-intro__gamme">{{ product.type | default: 'Capté' }}</span>
+  {%- if block.settings.tagline != blank -%}
+    <span class="capte-pdp-intro__tag"><span class="capte__rec" aria-hidden="true"></span>{{ block.settings.tagline }}</span>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Capté — En-tête produit",
+  "settings": [
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Lunettes caméra" }
+  ],
+  "presets": [{ "name": "Capté — En-tête produit" }]
+}
+{% endschema %}
