@@ -28,7 +28,7 @@
         assign accent = '#CFD6DE'
       endif
     -%}
-    <div class="capte-card__media{% if hover %} capte-card__media--swap{% endif %}" style="--accent: {{ accent }};">
+    <div class="capte-card__media{% if hover %} capte-card__media--swap{% endif %}{% if image.aspect_ratio >= 1 %} capte-card__media--studio{% endif %}" style="--accent: {{ accent }};">
       {%- if image -%}
         {{
           image

@@ -29,6 +29,10 @@
       {%- endif -%}
     {%- endfor -%}
   </ul>
+
+  {%- if block.settings.virtual_notice != blank -%}
+    <p class="capte-pdp-virtual">{{ block.settings.virtual_notice }}</p>
+  {%- endif -%}
 </div>
 
 {% schema %}
@@ -46,7 +50,8 @@
     { "type": "richtext", "id": "content_4", "label": "Row 4 content", "default": "<p>Garantie légale de conformité de 2 ans, comme pour tout achat en France.</p>" },
     { "type": "text", "id": "trust_1", "label": "Reassurance 1", "default": "Marque française" },
     { "type": "text", "id": "trust_2", "label": "Reassurance 2", "default": "Paiement sécurisé" },
-    { "type": "text", "id": "trust_3", "label": "Reassurance 3", "default": "Service client en français" }
+    { "type": "text", "id": "trust_3", "label": "Reassurance 3", "default": "Service client en français" },
+    { "type": "textarea", "id": "virtual_notice", "label": "Virtual images notice", "info": "Required when product visuals or people are AI-generated. Leave empty to hide.", "default": "Images virtuelles : les visuels de cette page sont générés par IA et illustratifs. Le produit livré peut présenter de légères différences." }
   ],
   "presets": [{ "name": "Capté — Détails produit" }]
 }

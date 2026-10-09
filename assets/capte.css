@@ -550,6 +550,10 @@ body {
   transition: transform 1.4s var(--capte-ease), opacity 0.7s var(--capte-ease);
 }
 
+/* Square studio shots keep the whole frame visible on the portrait card */
+.capte-card__media--studio { background: #fcf9f3; }
+.capte-card__media--studio .capte-card__img { object-fit: contain; }
+
 .capte-card__img--hover { opacity: 0; }
 .capte-card__link:hover .capte-card__img { transform: scale(1.04); }
 .capte-card__link:hover .capte-card__media--swap .capte-card__img--hover { opacity: 1; }
@@ -1147,3 +1151,6 @@ body {
   .capte__btn,
   .capte-line__img img { transition: none; }
 }
+
+/* Notice under the product gallery details (AI-generated visuals) */
+.capte-pdp-virtual { margin: 1rem 0 0; font-size: 0.74rem; line-height: 1.5; letter-spacing: 0.02em; color: var(--capte-galet); }
