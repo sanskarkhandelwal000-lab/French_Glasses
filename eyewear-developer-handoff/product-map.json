@@ -1,0 +1,180 @@
+{
+  "naming_note": "P01\u2013P06 are internal handoff IDs, not manufacturer SKUs. Descriptive names; M95 comes from supplied supplier sheets.",
+  "duplicate_source": "WhatsApp Image 2026-09-26 at 8.16.32 PM.jpeg is the same product/source as P03.",
+  "products": [
+    {
+      "product_id": "P01",
+      "product_name": "Glossy Black Round Sunglasses",
+      "product_tag": "P01-glossy-black-round-sunglasses",
+      "original_source_filename": "6b6b7282-376a-418b-8f1b-c92ec48ec275.jpeg",
+      "original_reference": "references-do-not-upload/P01-glossy-black-round-sunglasses__original-reference.jpeg",
+      "images": [
+        {
+          "role": "01-ecommerce-front",
+          "file": "P01-glossy-black-round-sunglasses/P01-glossy-black-round-sunglasses__01-ecommerce-front.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "02-ecommerce-angle",
+          "file": "P01-glossy-black-round-sunglasses/P01-glossy-black-round-sunglasses__02-ecommerce-angle.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "03-lifestyle-apres-ski",
+          "file": "P01-glossy-black-round-sunglasses/P01-glossy-black-round-sunglasses__03-lifestyle-apres-ski.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "04-alternative-lifestyle-original",
+          "file": "P01-glossy-black-round-sunglasses/alternatives/P01-glossy-black-round-sunglasses__04-alternative-lifestyle-original.png",
+          "recommended_gallery": false
+        }
+      ]
+    },
+    {
+      "product_id": "P02",
+      "product_name": "Black Square Clear-Lens Glasses",
+      "product_tag": "P02-black-square-clear-lens-glasses",
+      "original_source_filename": "69b9bc48-544d-43fb-b9ae-2d9ea6417f16.jpeg",
+      "original_reference": "references-do-not-upload/P02-black-square-clear-lens-glasses__original-reference.jpeg",
+      "images": [
+        {
+          "role": "01-ecommerce-front",
+          "file": "P02-black-square-clear-lens-glasses/P02-black-square-clear-lens-glasses__01-ecommerce-front.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "02-ecommerce-detail",
+          "file": "P02-black-square-clear-lens-glasses/P02-black-square-clear-lens-glasses__02-ecommerce-detail.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "03-lifestyle-ski-chalet",
+          "file": "P02-black-square-clear-lens-glasses/P02-black-square-clear-lens-glasses__03-lifestyle-ski-chalet.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "04-alternative-lifestyle-original",
+          "file": "P02-black-square-clear-lens-glasses/alternatives/P02-black-square-clear-lens-glasses__04-alternative-lifestyle-original.png",
+          "recommended_gallery": false
+        }
+      ]
+    },
+    {
+      "product_id": "P03",
+      "product_name": "Matte Black Round Sunglasses",
+      "product_tag": "P03-matte-black-round-sunglasses",
+      "original_source_filename": "315d0538-c0e1-4ea5-b4f7-53b816fd12d7.jpeg",
+      "original_reference": "references-do-not-upload/P03-matte-black-round-sunglasses__original-reference.jpeg",
+      "images": [
+        {
+          "role": "01-ecommerce-front",
+          "file": "P03-matte-black-round-sunglasses/P03-matte-black-round-sunglasses__01-ecommerce-front.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "02-ecommerce-angle",
+          "file": "P03-matte-black-round-sunglasses/P03-matte-black-round-sunglasses__02-ecommerce-angle.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "03-lifestyle-apres-ski",
+          "file": "P03-matte-black-round-sunglasses/P03-matte-black-round-sunglasses__03-lifestyle-apres-ski.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "04-alternative-lifestyle-original",
+          "file": "P03-matte-black-round-sunglasses/alternatives/P03-matte-black-round-sunglasses__04-alternative-lifestyle-original.png",
+          "recommended_gallery": false
+        }
+      ]
+    },
+    {
+      "product_id": "P04",
+      "product_name": "M95 Orange Frame Gold Mirror Shield",
+      "product_tag": "P04-m95-orange-frame-gold-mirror-shield",
+      "original_source_filename": "92f91dc0-f0c9-4426-8dfe-8a8e470726eb.jpeg",
+      "original_reference": "references-do-not-upload/P04-m95-orange-frame-gold-mirror-shield__original-reference.jpeg",
+      "images": [
+        {
+          "role": "01-ecommerce-front",
+          "file": "P04-m95-orange-frame-gold-mirror-shield/P04-m95-orange-frame-gold-mirror-shield__01-ecommerce-front.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "02-ecommerce-detail",
+          "file": "P04-m95-orange-frame-gold-mirror-shield/P04-m95-orange-frame-gold-mirror-shield__02-ecommerce-detail.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "03-lifestyle-ski-resort",
+          "file": "P04-m95-orange-frame-gold-mirror-shield/P04-m95-orange-frame-gold-mirror-shield__03-lifestyle-ski-resort.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "04-alternative-lifestyle-original",
+          "file": "P04-m95-orange-frame-gold-mirror-shield/alternatives/P04-m95-orange-frame-gold-mirror-shield__04-alternative-lifestyle-original.png",
+          "recommended_gallery": false
+        }
+      ]
+    },
+    {
+      "product_id": "P05",
+      "product_name": "M95 Black Frame Smoke Shield",
+      "product_tag": "P05-m95-black-frame-smoke-shield",
+      "original_source_filename": "a3b51287-74a8-42d6-b827-a7ae81c8c981.jpeg",
+      "original_reference": "references-do-not-upload/P05-m95-black-frame-smoke-shield__original-reference.jpeg",
+      "images": [
+        {
+          "role": "01-ecommerce-front",
+          "file": "P05-m95-black-frame-smoke-shield/P05-m95-black-frame-smoke-shield__01-ecommerce-front.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "02-ecommerce-detail",
+          "file": "P05-m95-black-frame-smoke-shield/P05-m95-black-frame-smoke-shield__02-ecommerce-detail.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "03-lifestyle-ski-resort",
+          "file": "P05-m95-black-frame-smoke-shield/P05-m95-black-frame-smoke-shield__03-lifestyle-ski-resort.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "04-alternative-lifestyle-original",
+          "file": "P05-m95-black-frame-smoke-shield/alternatives/P05-m95-black-frame-smoke-shield__04-alternative-lifestyle-original.png",
+          "recommended_gallery": false
+        }
+      ]
+    },
+    {
+      "product_id": "P06",
+      "product_name": "M95 White Frame Blue Shield",
+      "product_tag": "P06-m95-white-frame-blue-shield",
+      "original_source_filename": "bd99ce2d-7772-4cfb-b775-3eb40862fa6b.jpeg",
+      "original_reference": "references-do-not-upload/P06-m95-white-frame-blue-shield__original-reference.jpeg",
+      "images": [
+        {
+          "role": "01-ecommerce-front",
+          "file": "P06-m95-white-frame-blue-shield/P06-m95-white-frame-blue-shield__01-ecommerce-front.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "02-ecommerce-detail",
+          "file": "P06-m95-white-frame-blue-shield/P06-m95-white-frame-blue-shield__02-ecommerce-detail.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "03-lifestyle-ski-resort",
+          "file": "P06-m95-white-frame-blue-shield/P06-m95-white-frame-blue-shield__03-lifestyle-ski-resort.png",
+          "recommended_gallery": true
+        },
+        {
+          "role": "04-alternative-lifestyle-original",
+          "file": "P06-m95-white-frame-blue-shield/alternatives/P06-m95-white-frame-blue-shield__04-alternative-lifestyle-original.png",
+          "recommended_gallery": false
+        }
+      ]
+    }
+  ]
+}
