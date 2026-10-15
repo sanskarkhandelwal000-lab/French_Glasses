@@ -1,0 +1,361 @@
+{
+  "source_catalog": "/Users/udaykhandelwal/Downloads/catalogue_lunettes_sans_prix.xlsx",
+  "selected_models": [
+    "MT5",
+    "CL02",
+    "CL03",
+    "G5MAX",
+    "M95",
+    "G2Pro"
+  ],
+  "excluded_models": [
+    {
+      "model": "MT5R",
+      "reason": "First product crossed out in screenshot"
+    },
+    {
+      "model": "G6MAX",
+      "reason": "Below the six circled selections; excluded to match requested total of six"
+    }
+  ],
+  "products": [
+    {
+      "model": "MT5",
+      "catalog_cell": "Sheet1!A3",
+      "image": "MT5/MT5__05-lifestyle.png",
+      "reference": "catalog-references/MT5__catalog-reference.png",
+      "scene": "Adult South Asian man with oval face, warm brown skin, short dark hair and subtle stubble, wearing a cream merino sweater inside a beautiful timber ski chalet next to a large window with snowy alpine slopes behind. Close head-and-shoulders luxury apr\u00e8s-ski editorial, relaxed expression and visible eyes, warm natural daylight, glasses front almost straight-on and large in frame.",
+      "product_description": "The actual pair below the box: thick black glossy/satin wayfarer-shaped full rim, broad softly rectangular lens openings, clear lenses, small round front corner details, wide black temples. Preserve exact dimensions. Do not use the box illustration as the subject.",
+      "gallery": [
+        {
+          "file": "MT5/MT5__01-ecommerce-front-white.png",
+          "role": "Front \u2014 listing image",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "MT5 smart glasses \u2014 front \u2014 listing image"
+        },
+        {
+          "file": "MT5/MT5__02-ecommerce-three-quarter-white.png",
+          "role": "Three-quarter view",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "MT5 smart glasses \u2014 three-quarter view"
+        },
+        {
+          "file": "MT5/MT5__03-ecommerce-detail-white.png",
+          "role": "Construction detail",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "MT5 smart glasses \u2014 construction detail"
+        },
+        {
+          "file": "MT5/MT5__04-feature-infographic.png",
+          "role": "Feature infographic",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "MT5 smart glasses \u2014 feature infographic"
+        },
+        {
+          "file": "MT5/MT5__05-lifestyle.png",
+          "role": "Lifestyle",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "MT5 smart glasses \u2014 lifestyle"
+        }
+      ],
+      "features": [
+        "Photo Capture",
+        "Video Recording",
+        "AI Translation",
+        "Music Playback",
+        "Phone Calls",
+        "AI Q&A"
+      ],
+      "feature_source": "Supplier catalog Sheet1!C3",
+      "feature_verification": "Catalog-listed claims, not independently tested."
+    },
+    {
+      "model": "CL02",
+      "catalog_cell": "Sheet1!A4",
+      "image": "CL02/CL02__05-lifestyle.png",
+      "reference": "catalog-references/CL02__catalog-reference.png",
+      "scene": "Adult woman with softly square face, brown skin, dark hair swept back, wearing a deep charcoal wool knit sweater in a refined alpine lodge by a window overlooking snowy mountains. Close portrait with only slight face turn so two circular corner modules remain readable, natural skin and eye detail, warm window light, contemporary apr\u00e8s-ski leisure.",
+      "product_description": "The actual eyeglasses at bottom of photo: thick black softly rounded/panto full rims, transparent clear lenses, circular modules at both outer front corners, curved black upper brow and original bridge shape, black wide temples. Product photo authority is the actual pair, not sunglasses illustration on packaging. Keep lenses clear as supplied.",
+      "gallery": [
+        {
+          "file": "CL02/CL02__01-ecommerce-front-white.png",
+          "role": "Front \u2014 listing image",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "CL02 smart glasses \u2014 front \u2014 listing image"
+        },
+        {
+          "file": "CL02/CL02__02-ecommerce-three-quarter-white.png",
+          "role": "Three-quarter view",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "CL02 smart glasses \u2014 three-quarter view"
+        },
+        {
+          "file": "CL02/CL02__03-ecommerce-detail-white.png",
+          "role": "Construction detail",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "CL02 smart glasses \u2014 construction detail"
+        },
+        {
+          "file": "CL02/CL02__04-feature-infographic.png",
+          "role": "Feature infographic",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "CL02 smart glasses \u2014 feature infographic"
+        },
+        {
+          "file": "CL02/CL02__05-lifestyle.png",
+          "role": "Lifestyle",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "CL02 smart glasses \u2014 lifestyle"
+        }
+      ],
+      "features": [
+        "Photo Capture",
+        "Video Recording",
+        "AI Translation",
+        "Music Playback",
+        "Phone Calls",
+        "AI Q&A"
+      ],
+      "feature_source": "Supplier catalog Sheet1!C4",
+      "feature_verification": "Catalog-listed claims, not independently tested."
+    },
+    {
+      "model": "CL03",
+      "catalog_cell": "Sheet1!A5",
+      "image": "CL03/CL03__05-lifestyle.png",
+      "reference": "catalog-references/CL03__catalog-reference.png",
+      "scene": "Adult East Asian man with balanced oval face, neatly styled dark hair, dark navy fine merino turtleneck in a warm modern ski chalet with timber and stone fireplace, snowy mountain window in background. Premium editorial portrait chest-up, face close to frontal, the thin metallic bottom rims and nose pads clearly visible, natural quiet confidence and warm daylight.",
+      "product_description": "The real pair beneath the box: black heavy upper browline with thin metallic lower rims around softly rectangular clear lenses, adjustable transparent nose pads visible, slim metal central bridge, round black front-corner hardware. It is a browline HALF-RIM construction, NOT thick black full rims below lenses. Precisely preserve this distinctive design, proportions, clear lenses and metal lower rims.",
+      "gallery": [
+        {
+          "file": "CL03/CL03__01-ecommerce-front-white.png",
+          "role": "Front \u2014 listing image",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "CL03 smart glasses \u2014 front \u2014 listing image"
+        },
+        {
+          "file": "CL03/CL03__02-ecommerce-three-quarter-white.png",
+          "role": "Three-quarter view",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "CL03 smart glasses \u2014 three-quarter view"
+        },
+        {
+          "file": "CL03/CL03__03-ecommerce-detail-white.png",
+          "role": "Construction detail",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "CL03 smart glasses \u2014 construction detail"
+        },
+        {
+          "file": "CL03/CL03__04-feature-infographic.png",
+          "role": "Feature infographic",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "CL03 smart glasses \u2014 feature infographic"
+        },
+        {
+          "file": "CL03/CL03__05-lifestyle.png",
+          "role": "Lifestyle",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "CL03 smart glasses \u2014 lifestyle"
+        }
+      ],
+      "features": [
+        "Photo Capture",
+        "Video Recording",
+        "AI Translation",
+        "Music Playback",
+        "Phone Calls",
+        "AI Q&A"
+      ],
+      "feature_source": "Supplier catalog Sheet1!C5",
+      "feature_verification": "Catalog-listed claims, not independently tested."
+    },
+    {
+      "model": "G5MAX",
+      "catalog_cell": "Sheet1!A6",
+      "image": "G5MAX/G5MAX__05-lifestyle.png",
+      "reference": "catalog-references/G5MAX__catalog-reference.png",
+      "scene": "Athletic adult woman with oval face and dark hair wearing a matte cream ski helmet with chin strap, pale grey technical ski jacket, standing at a sunny ski-resort viewpoint with snowy alpine ridgeline and skis held vertically beside her. Close chest-up winter sports campaign portrait, stationary and relaxed, product front nearly frontal, pink nose piece and transparent shield recognizable, crisp winter daylight.",
+      "product_description": "Use the actual glasses at upper left of reference: translucent crystal/white wraparound upper frame and temples, single broad pale lightly iridescent CLEAR shield lens, small black circular module centered in upper bridge, pink/magenta nose support, rounded wraparound lens edges. Keep shield mostly transparent with subtle cyan/pink reflections, do not make it dark blue or orange. This is NOT the orange product illustration on booklet.",
+      "gallery": [
+        {
+          "file": "G5MAX/G5MAX__01-ecommerce-front-white.png",
+          "role": "Front \u2014 listing image",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "G5MAX smart glasses \u2014 front \u2014 listing image"
+        },
+        {
+          "file": "G5MAX/G5MAX__02-ecommerce-three-quarter-white.png",
+          "role": "Three-quarter view",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "G5MAX smart glasses \u2014 three-quarter view"
+        },
+        {
+          "file": "G5MAX/G5MAX__03-ecommerce-detail-white.png",
+          "role": "Construction detail",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "G5MAX smart glasses \u2014 construction detail"
+        },
+        {
+          "file": "G5MAX/G5MAX__04-feature-infographic.png",
+          "role": "Feature infographic",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "G5MAX smart glasses \u2014 feature infographic"
+        },
+        {
+          "file": "G5MAX/G5MAX__05-lifestyle.png",
+          "role": "Lifestyle",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "G5MAX smart glasses \u2014 lifestyle"
+        }
+      ],
+      "features": [
+        "Photo Capture",
+        "Video Recording",
+        "AI Translation",
+        "Music Playback",
+        "Phone Calls",
+        "AI Q&A"
+      ],
+      "feature_source": "Supplier catalog Sheet1!C6",
+      "feature_verification": "Catalog-listed claims, not independently tested."
+    },
+    {
+      "model": "M95",
+      "catalog_cell": "Sheet1!A7",
+      "image": "M95/M95__05-lifestyle.png",
+      "reference": "catalog-references/M95__catalog-reference.png",
+      "scene": "Athletic adult South Asian man with strong oval face and natural dark stubble wearing a matte charcoal ski helmet and stone-coloured technical ski jacket, stationary with skis beside shoulder at a spectacular snowy ski-resort overlook. Close chest-up portrait, slight ten-degree face turn, glasses prominent, warm orange mirrored lens against cool alpine landscape, realistic winter sunlight.",
+      "product_description": "Actual glasses in middle of reference: orange-red angular frame and temples, orange/gold/red mirrored broad wraparound shield, central circular camera-like black module above angular nose cutout, orange-red nose surround, squared/angular outer corners. Keep product geometry and all authentic visible center-front details from the actual pair; do not use box as subject.",
+      "gallery": [
+        {
+          "file": "M95/M95__01-ecommerce-front-white.png",
+          "role": "Front \u2014 listing image",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "M95 smart glasses \u2014 front \u2014 listing image"
+        },
+        {
+          "file": "M95/M95__02-ecommerce-three-quarter-white.png",
+          "role": "Three-quarter view",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "M95 smart glasses \u2014 three-quarter view"
+        },
+        {
+          "file": "M95/M95__03-ecommerce-detail-white.png",
+          "role": "Construction detail",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "M95 smart glasses \u2014 construction detail"
+        },
+        {
+          "file": "M95/M95__04-feature-infographic.png",
+          "role": "Feature infographic",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "M95 smart glasses \u2014 feature infographic"
+        },
+        {
+          "file": "M95/M95__05-lifestyle.png",
+          "role": "Lifestyle",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "M95 smart glasses \u2014 lifestyle"
+        }
+      ],
+      "features": [
+        "Photo Capture",
+        "Video Recording",
+        "AI Translation",
+        "Music Playback",
+        "Phone Calls",
+        "AI Q&A"
+      ],
+      "feature_source": "Supplier catalog Sheet1!C7",
+      "feature_verification": "Catalog-listed claims, not independently tested."
+    },
+    {
+      "model": "G2Pro",
+      "catalog_cell": "Sheet1!A8",
+      "image": "G2Pro/G2Pro__05-lifestyle.png",
+      "reference": "catalog-references/G2Pro__catalog-reference.png",
+      "scene": "Adult woman with elongated oval face, fair skin and dark blonde hair tucked behind ears, oatmeal knit beanie and forest green quilted winter jacket on an alpine chalet terrace, snow-covered village and ski runs behind. Close head-and-shoulders apr\u00e8s-ski campaign portrait, almost frontal face, refined natural smile, glasses dominant and clearly fitted, soft warm winter afternoon light.",
+      "product_description": "Actual open pair in foreground, not box illustrations: black subtly rounded rectangular full-rim frame, smaller neat lens openings, dark neutral grey smoke lenses, black conventional bridge, black temples curving toward ears. Front outer corners are plain as pictured: do not invent circular front cameras/modules, do not substitute MT5/CL02. Preserve this simpler silhouette and exact colour.",
+      "gallery": [
+        {
+          "file": "G2Pro/G2Pro__01-ecommerce-front-white.png",
+          "role": "Front \u2014 listing image",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "G2Pro smart glasses \u2014 front \u2014 listing image"
+        },
+        {
+          "file": "G2Pro/G2Pro__02-ecommerce-three-quarter-white.png",
+          "role": "Three-quarter view",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "G2Pro smart glasses \u2014 three-quarter view"
+        },
+        {
+          "file": "G2Pro/G2Pro__03-ecommerce-detail-white.png",
+          "role": "Construction detail",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "G2Pro smart glasses \u2014 construction detail"
+        },
+        {
+          "file": "G2Pro/G2Pro__04-feature-infographic.png",
+          "role": "Feature infographic",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "G2Pro smart glasses \u2014 feature infographic"
+        },
+        {
+          "file": "G2Pro/G2Pro__05-lifestyle.png",
+          "role": "Lifestyle",
+          "width": 1254,
+          "height": 1254,
+          "alt_text": "G2Pro smart glasses \u2014 lifestyle"
+        }
+      ],
+      "features": [
+        "Photo Capture",
+        "Video Recording",
+        "AI Translation",
+        "Music Playback",
+        "Phone Calls",
+        "AI Q&A"
+      ],
+      "feature_source": "Supplier catalog Sheet1!C8",
+      "feature_verification": "Catalog-listed claims, not independently tested."
+    }
+  ],
+  "gallery_order": [
+    "Front \u2014 listing image",
+    "Three-quarter view",
+    "Construction detail",
+    "Feature infographic",
+    "Lifestyle"
+  ],
+  "asset_count": 30
+}
