@@ -551,7 +551,7 @@ body {
 }
 
 /* Square studio shots keep the whole frame visible on the portrait card */
-.capte-card__media--studio { background: #fcf9f3; }
+.capte-card__media--studio { background: #fff; }
 .capte-card__media--studio .capte-card__img { object-fit: contain; }
 
 .capte-card__img--hover { opacity: 0; }
