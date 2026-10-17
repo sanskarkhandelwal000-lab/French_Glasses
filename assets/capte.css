@@ -1208,19 +1208,17 @@ body {
     linear-gradient(var(--c), var(--c)) bottom right / var(--t) var(--l) no-repeat;
 }
 
-/* Arrows: small frosted discs on the stage */
+/* Arrows: solid Encre discs on the stage */
 .media-gallery--carousel .slideshow-control--style-arrow {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  color: var(--capte-encre, #15151b);
-  background: rgb(244 241 236 / 0.82);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 0 1px rgb(21 21 27 / 0.1), 0 10px 24px -10px rgb(0 0 0 / 0.5);
+  color: var(--capte-creme, #f4f1ec);
+  background: rgb(21 21 27 / 0.9);
+  box-shadow: 0 0 0 1px rgb(244 241 236 / 0.14), 0 10px 24px -10px rgb(0 0 0 / 0.6);
   transition: transform 0.4s var(--capte-ease, ease), background-color 0.3s;
 }
-.media-gallery--carousel .slideshow-control--style-arrow:hover { background: #fff; transform: scale(1.06); }
+.media-gallery--carousel .slideshow-control--style-arrow:hover { background: var(--capte-rec, #ff4d2e); transform: scale(1.06); }
 
 /* Thumbnails */
 .media-gallery--carousel .slideshow-controls__thumbnails { gap: 12px; }
