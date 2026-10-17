@@ -1,0 +1,67 @@
+<div class="capte-pdp-details" lang="fr" {{ block.shopify_attributes }}>
+  <ul class="capte-pdp-specs" role="list">
+    {%- for i in (1..3) -%}
+      {%- capture v %}spec_{{ i }}_value{% endcapture -%}
+      {%- capture l %}spec_{{ i }}_label{% endcapture -%}
+      {%- if block.settings[v] != blank -%}
+        <li>
+          <span class="capte-pdp-specs__icon" aria-hidden="true">
+            {%- case i -%}
+              {%- when 1 -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.5A1.5 1.5 0 0 1 5.5 7H8l1.2-2h5.6L16 7h2.5A1.5 1.5 0 0 1 20 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5z"/><circle cx="12" cy="13" r="3.2"/></svg>
+              {%- when 2 -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3.5V7a2 2 0 0 1 2-2"/><path d="M19 9.5h.5A1.5 1.5 0 0 1 21 11v8l-3-2.5h-4"/></svg>
+              {%- else -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/></svg>
+            {%- endcase -%}
+          </span>
+          <span class="capte-pdp-specs__value">{{ block.settings[v] }}</span>
+          <span class="capte-pdp-specs__label">{{ block.settings[l] }}</span>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+
+  <div class="capte-pdp-acc">
+    {%- for i in (1..4) -%}
+      {%- capture t %}title_{{ i }}{% endcapture -%}
+      {%- capture c %}content_{{ i }}{% endcapture -%}
+      {%- if block.settings[t] != blank -%}
+        <details>
+          <summary>{{ block.settings[t] }}</summary>
+          <div class="capte-pdp-acc__a">{{ block.settings[c] }}</div>
+        </details>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  {%- if block.settings.virtual_notice != blank -%}
+    <p class="capte-pdp-virtual">{{ block.settings.virtual_notice }}</p>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Capté — Détails produit",
+  "settings": [
+    { "type": "header", "content": "Key specs" },
+    { "type": "text", "id": "spec_1_value", "label": "Spec 1", "default": "8 MP" },
+    { "type": "text", "id": "spec_1_label", "label": "Spec 1 label", "default": "Photo et vidéo" },
+    { "type": "text", "id": "spec_2_value", "label": "Spec 2", "default": "IA" },
+    { "type": "text", "id": "spec_2_label", "label": "Spec 2 label", "default": "Traduction et assistant" },
+    { "type": "text", "id": "spec_3_value", "label": "Spec 3", "default": "Mains libres" },
+    { "type": "text", "id": "spec_3_label", "label": "Spec 3 label", "default": "Musique et appels" },
+    { "type": "header", "content": "Accordion" },
+    { "type": "text", "id": "title_1", "label": "Row 1 title", "default": "Caractéristiques" },
+    { "type": "richtext", "id": "content_1", "label": "Row 1 content", "default": "<p>Caméra 8 MP intégrée pour la photo et la vidéo en vue subjective. Traduction par IA, musique, appels et assistant vocal, mains libres.</p>" },
+    { "type": "text", "id": "title_2", "label": "Row 2 title", "default": "Usage respectueux" },
+    { "type": "richtext", "id": "content_2", "label": "Row 2 content", "default": "<p>On filme ses aventures et ses proches, jamais des inconnus. Respectez toujours les personnes autour de vous et la réglementation en vigueur.</p>" },
+    { "type": "text", "id": "title_3", "label": "Row 3 title", "default": "Retours" },
+    { "type": "richtext", "id": "content_3", "label": "Row 3 content", "default": "<p>Vous disposez d'un délai de rétractation de 14 jours après réception, conformément au droit européen de la consommation.</p>" },
+    { "type": "text", "id": "title_4", "label": "Row 4 title", "default": "Garantie" },
+    { "type": "richtext", "id": "content_4", "label": "Row 4 content", "default": "<p>Garantie légale de conformité de 2 ans, comme pour tout achat en France.</p>" },
+    { "type": "textarea", "id": "virtual_notice", "label": "Virtual images notice", "info": "Required when product visuals or people are AI-generated. Leave empty to hide.", "default": "Images virtuelles : les visuels de cette page sont générés par IA et illustratifs. Le produit livré peut présenter de légères différences." }
+  ],
+  "presets": [{ "name": "Capté — Détails produit" }]
+}
+{% endschema %}

@@ -1,0 +1,9 @@
+{%- comment -%}
+  Renders text with *starred* words wrapped in a colour highlight.
+  @param {string} text - e.g. "Vos lunettes deviennent *votre caméra*."
+{%- endcomment -%}
+{%- assign parts = text | split: '*' -%}
+{%- for part in parts -%}
+  {%- assign odd = forloop.index0 | modulo: 2 -%}
+  {%- if odd == 1 -%}<em class="capte-hl">{{ part }}</em>{%- else -%}{{ part }}{%- endif -%}
+{%- endfor -%}
