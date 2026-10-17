@@ -1312,3 +1312,5 @@ body {
 
 /* Arrows sit above the multiplied photo and the viewfinder corners */
 .media-gallery--carousel slideshow-arrows { z-index: 4; }
+.media-gallery--carousel slideshow-arrows,
+.media-gallery--carousel slideshow-arrows .slideshow-control { mix-blend-mode: normal !important; }
