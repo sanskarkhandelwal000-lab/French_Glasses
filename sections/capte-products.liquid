@@ -4,6 +4,7 @@
     assign source = collections.all
   endif
   assign limit = section.settings.limit
+  assign current_id = product.id
 -%}
 
 {%- comment -%}
@@ -34,6 +35,9 @@
             if shown >= limit
               break
             endif
+            if current_id and product.id == current_id
+              continue
+            endif
             render 'capte-product-card', product: product
             assign pinned_ids = pinned_ids | append: ',' | append: product.id | append: ','
             assign shown = shown | plus: 1
@@ -41,6 +45,9 @@
           for product in source.products
             if shown >= limit
               break
+            endif
+            if current_id and product.id == current_id
+              continue
             endif
             assign key = ',' | append: product.id | append: ','
             if pinned_ids contains key

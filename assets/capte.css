@@ -1154,3 +1154,160 @@ body {
 
 /* Notice under the product gallery details (AI-generated visuals) */
 .capte-pdp-virtual { margin: 1rem 0 0; font-size: 0.74rem; line-height: 1.5; letter-spacing: 0.02em; color: var(--capte-galet); }
+
+/* =========================================================================
+   Product gallery: a crème display stage with a thumbnail rail.
+   Studio shots are white, so they are multiplied onto Crème and read as one
+   brand-coloured surface instead of a glaring white box on the dark page.
+   ========================================================================= */
+.media-gallery--carousel {
+  --capte-stage-radius: 26px;
+}
+
+.media-gallery--carousel slideshow-container {
+  position: relative;
+  border-radius: var(--capte-stage-radius);
+  background: var(--capte-creme, #f4f1ec);
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.06), 0 40px 80px -40px rgb(0 0 0 / 0.8);
+  overflow: hidden;
+}
+
+/* The slide itself is the stage; the photo sits on it with room to breathe */
+.media-gallery--carousel slideshow-slide,
+.media-gallery--carousel .product-media-container { background: transparent !important; }
+.media-gallery--carousel .product-media-container.constrain-height {
+  --viewport-offset: 9rem;
+  --constrained-min-height: 420px;
+}
+.media-gallery--carousel .product-media,
+.media-gallery--carousel .product-media__image { background: transparent; }
+.media-gallery--carousel .product-media__image {
+  mix-blend-mode: multiply;
+  object-fit: contain;
+}
+
+/* Viewfinder corners over the stage */
+.media-gallery--carousel slideshow-container::after {
+  --c: rgb(21 21 27 / 0.55);
+  --l: 22px;
+  --t: 2px;
+  --o: 18px;
+  content: '';
+  position: absolute;
+  inset: var(--o);
+  pointer-events: none;
+  z-index: 3;
+  background:
+    linear-gradient(var(--c), var(--c)) top left / var(--l) var(--t) no-repeat,
+    linear-gradient(var(--c), var(--c)) top left / var(--t) var(--l) no-repeat,
+    linear-gradient(var(--c), var(--c)) top right / var(--l) var(--t) no-repeat,
+    linear-gradient(var(--c), var(--c)) top right / var(--t) var(--l) no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / var(--l) var(--t) no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / var(--t) var(--l) no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right / var(--l) var(--t) no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right / var(--t) var(--l) no-repeat;
+}
+
+/* Arrows: small frosted discs on the stage */
+.media-gallery--carousel .slideshow-control--style-arrow {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: var(--capte-encre, #15151b);
+  background: rgb(244 241 236 / 0.82);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 0 1px rgb(21 21 27 / 0.1), 0 10px 24px -10px rgb(0 0 0 / 0.5);
+  transition: transform 0.4s var(--capte-ease, ease), background-color 0.3s;
+}
+.media-gallery--carousel .slideshow-control--style-arrow:hover { background: #fff; transform: scale(1.06); }
+
+/* Thumbnails */
+.media-gallery--carousel .slideshow-controls__thumbnails { gap: 12px; }
+.media-gallery--carousel .slideshow-controls__thumbnails .slideshow-control {
+  position: relative;
+  overflow: hidden;
+  background: var(--capte-creme, #f4f1ec);
+  border: 0;
+  outline: 0;
+  opacity: 0.8;
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.08);
+  transition: opacity 0.35s var(--capte-ease, ease), box-shadow 0.35s var(--capte-ease, ease), transform 0.35s var(--capte-ease, ease);
+}
+.media-gallery--carousel .slideshow-controls__thumbnails .slideshow-control img {
+  mix-blend-mode: multiply;
+  object-fit: contain;
+}
+.media-gallery--carousel .slideshow-controls__thumbnails .slideshow-control:hover { opacity: 0.85; }
+.media-gallery--carousel .slideshow-controls__thumbnails .slideshow-control[aria-selected='true'] {
+  opacity: 1;
+  outline: 0;
+  border: 0;
+  box-shadow: 0 0 0 2px var(--capte-rec, #ff4d2e), 0 12px 28px -14px rgb(255 77 46 / 0.7);
+}
+
+@media (min-width: 750px) {
+  /* Keep stage + rail on screen together and stuck while the details scroll */
+  .media-gallery--carousel.sticky-content { top: calc(var(--sticky-header-offset, 0px) + 1.5rem); }
+  .media-gallery--carousel slideshow-component { align-items: flex-start; }
+  /* A square stage that never outgrows the viewport */
+  .media-gallery--carousel slideshow-container {
+    width: min(100%, max(500px, calc(100vh - 9rem)));
+    aspect-ratio: 1;
+  }
+}
+
+@media (max-width: 749px) {
+  .media-gallery--carousel slideshow-container { border-radius: 20px; }
+  .media-gallery--carousel slideshow-container::after { --o: 12px; --l: 16px; }
+}
+
+/* ---- Product page: key specs, reassurance, details ------------------------ */
+.capte-pdp-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--capte-hairline-dark);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.035), rgb(255 255 255 / 0));
+  overflow: hidden;
+}
+.capte-pdp-specs li {
+  display: grid;
+  gap: 0.2rem;
+  justify-items: start;
+  padding: 1.1rem 1.1rem 1.15rem;
+}
+.capte-pdp-specs li + li { border-left: 1px solid var(--capte-hairline-dark); }
+.capte-pdp-specs__icon { display: inline-flex; width: 1.5rem; height: 1.5rem; margin-bottom: 0.5rem; color: var(--capte-rec); }
+.capte-pdp-specs li:nth-child(2) .capte-pdp-specs__icon { color: var(--capte-glacier); }
+.capte-pdp-specs li:nth-child(3) .capte-pdp-specs__icon { color: var(--capte-ambre); }
+.capte-pdp-specs__icon svg { width: 100%; height: 100%; }
+.capte-pdp-specs__value { font-size: 1.15rem; font-weight: 500; letter-spacing: -0.02em; color: var(--capte-text); }
+.capte-pdp-specs__label { font-size: 0.78rem; line-height: 1.35; color: var(--capte-text-mute); }
+
+.capte-pdp-assure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6rem 0.9rem;
+  margin: 0;
+  padding: 1rem 0 0;
+  list-style: none;
+  border-top: 1px solid var(--capte-hairline-dark);
+  font-family: var(--capte-font-body);
+  font-size: 0.74rem;
+  color: var(--capte-text-soft);
+}
+.capte-pdp-assure li { display: inline-flex; align-items: center; gap: 0.55rem; }
+.capte-pdp-assure__icon { display: inline-flex; width: 1.15rem; height: 1.15rem; color: var(--capte-creme); opacity: 0.85; }
+.capte-pdp-assure__icon svg { width: 100%; height: 100%; }
+
+@media (max-width: 749px) {
+  .capte-pdp-specs li { padding: 0.9rem 0.75rem; }
+  .capte-pdp-specs__value { font-size: 1rem; }
+  .capte-pdp-specs__label { font-size: 0.72rem; }
+  .capte-pdp-assure { gap: 0.6rem 1rem; }
+}
