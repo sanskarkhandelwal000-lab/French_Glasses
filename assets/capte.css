@@ -1309,3 +1309,6 @@ body {
   .capte-pdp-specs__label { font-size: 0.72rem; }
   .capte-pdp-assure { gap: 0.6rem 1rem; }
 }
+
+/* Arrows sit above the multiplied photo and the viewfinder corners */
+.media-gallery--carousel slideshow-arrows { z-index: 4; }
