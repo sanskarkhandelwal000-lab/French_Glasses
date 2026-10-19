@@ -1375,3 +1375,5 @@ body {
   transition: color 0.3s var(--capte-ease);
 }
 .mega-menu__link:hover { color: var(--capte-text); }
+.facets--horizontal .facets__overflow-list,
+.facets--horizontal .facets__item { display: none; }
