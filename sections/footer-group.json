@@ -40,7 +40,9 @@
             "label_2": "Questions fréquentes",
             "url_2": "/pages/faq",
             "label_3": "Mon compte",
-            "url_3": "/account"
+            "url_3": "/account",
+            "label_4": "contact.captelunettes@gmail.com",
+            "url_4": "mailto:contact.captelunettes@gmail.com"
           }
         },
         "c3": {

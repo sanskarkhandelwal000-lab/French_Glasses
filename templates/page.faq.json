@@ -65,7 +65,7 @@
           "type": "item",
           "settings": {
             "question": "Comment vous contacter ?",
-            "answer": "<p>Utilisez le <a href=\"/pages/contact\">formulaire de contact</a>. Nous répondons en français.</p>"
+            "answer": "<p>Utilisez le <a href=\"/pages/contact\">formulaire de contact</a> ou écrivez-nous à <a href=\"mailto:contact.captelunettes@gmail.com\">contact.captelunettes@gmail.com</a>. Nous répondons en français.</p>"
           }
         }
       },
