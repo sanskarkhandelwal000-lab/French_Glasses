@@ -18,7 +18,7 @@
   <div class="capte__wrap">
     <header class="capte-collection__head capte-reveal">
       <p class="capte__eyebrow capte-collection__eyebrow"><span class="capte__rec" aria-hidden="true"></span>{{ eyebrow }}</p>
-      <h1 class="capte__title capte__title--xl">{{ collection.title }}</h1>
+      <h1 class="capte__title capte__title--xl">{% if collection.handle == 'all' %}Toutes les lunettes{% else %}{{ collection.title }}{% endif %}</h1>
       {%- if collection.description != blank -%}
         <div class="capte-collection__desc">{{ collection.description }}</div>
       {%- endif -%}

@@ -25,6 +25,22 @@
   assign og_title = page_title | default: capte_brand
   if request.page_type == 'index'
     assign og_title = capte_brand | append: ' · ' | append: capte_tagline
+  elsif request.page_type == 'cart'
+    assign page_title = 'Panier'
+  elsif request.page_type == 'search'
+    assign page_title = 'Recherche'
+    if search.performed
+      assign page_title = 'Recherche : ' | append: search.terms
+    endif
+  elsif request.page_type == '404'
+    assign page_title = 'Page introuvable'
+  elsif request.page_type == 'collection' and collection.handle == 'all'
+    assign page_title = 'Toutes les lunettes'
+  elsif request.page_type == 'list-collections'
+    assign page_title = 'Les gammes'
+  endif
+  if request.page_type != 'index'
+    assign og_title = page_title | default: capte_brand
   endif
   assign og_url = canonical_url | default: request.origin
   assign og_type = 'website'

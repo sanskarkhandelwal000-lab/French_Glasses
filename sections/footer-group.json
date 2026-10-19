@@ -22,13 +22,13 @@
           "settings": {
             "title": "Gammes",
             "label_1": "Capté Glisse",
-            "url_1": "shopify://collections/all",
+            "url_1": "/collections/capte-glisse",
             "label_2": "Capté Soleil",
-            "url_2": "shopify://collections/all",
+            "url_2": "/collections/capte-soleil",
             "label_3": "Capté Clair",
-            "url_3": "shopify://collections/all",
+            "url_3": "/collections/capte-clair",
             "label_4": "Toute la collection",
-            "url_4": "shopify://collections/all"
+            "url_4": "/collections/all"
           }
         },
         "c2": {
@@ -38,7 +38,7 @@
             "label_1": "Nous contacter",
             "url_1": "/pages/contact",
             "label_2": "Questions fréquentes",
-            "url_2": "/#capte-faq",
+            "url_2": "/pages/faq",
             "label_3": "Mon compte",
             "url_3": "/account"
           }
@@ -48,7 +48,7 @@
           "settings": {
             "title": "Capté",
             "label_1": "Notre histoire",
-            "url_1": "/#capte-story",
+            "url_1": "/pages/notre-histoire",
             "label_2": "Nos fonctions",
             "url_2": "/#capte-features"
           }

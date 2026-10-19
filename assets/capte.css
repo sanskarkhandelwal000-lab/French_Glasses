@@ -1353,3 +1353,25 @@ body {
 .capte-collection__sibs a[style]::before { content: ''; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--dot); }
 .capte-collection__sibs a:hover { border-color: rgba(244, 241, 236, 0.4); color: var(--capte-text); }
 .capte-collection__sibs a[aria-current='page'] { background: var(--capte-creme); border-color: var(--capte-creme); color: var(--capte-encre); }
+
+/* Search: Shopify names the filter groups in the store language, so keep the results clean */
+.facets--horizontal .facets__filters-wrapper { display: none; }
+
+/* Desktop dropdown: a centred row under the navigation instead of a left-aligned list */
+.mega-menu__list { grid-template-columns: 1fr !important; padding-block: 0.5rem 0.75rem; }
+.mega-menu__column {
+  grid-column: 1 / -1 !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem clamp(1.5rem, 4vw, 4rem);
+}
+.mega-menu__column > div { width: auto !important; }
+.mega-menu__link {
+  font-size: 0.82rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--capte-text-soft);
+  transition: color 0.3s var(--capte-ease);
+}
+.mega-menu__link:hover { color: var(--capte-text); }
