@@ -1,0 +1,23 @@
+{%- comment -%}
+  Responsive image from bundled theme assets (<name>-800.webp, <name>-1400.webp).
+  @param {string} name - Asset base name, e.g. 'capte-glisse'
+  @param {string} [alt] - Alt text
+  @param {string} [sizes] - sizes attribute
+  @param {string} [loading] - 'lazy' (default) or 'eager'
+  @param {string} [class] - CSS class
+{%- endcomment -%}
+{%- liquid
+  assign small = name | append: '-800.webp' | asset_url
+  assign large = name | append: '-1400.webp' | asset_url
+-%}
+<img
+  src="{{ small }}"
+  srcset="{{ small }} 800w, {{ large }} 1400w"
+  sizes="{{ sizes | default: '100vw' }}"
+  width="1400"
+  height="1750"
+  alt="{{ alt | escape }}"
+  loading="{{ loading | default: 'lazy' }}"
+  decoding="async"
+  {% if class %}class="{{ class }}"{% endif %}
+>

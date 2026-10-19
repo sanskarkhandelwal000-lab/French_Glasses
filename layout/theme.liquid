@@ -3,7 +3,7 @@
   {% if request.design_mode %}
     class="shopify-design-mode"
   {% endif %}
-  lang="{{ request.locale.iso_code }}"
+  lang="fr"
 >
   <head>
     {%- if settings.favicon != blank -%}
@@ -23,6 +23,7 @@
     {%- render 'scripts' -%}
     {%- render 'theme-styles-variables' -%}
     {%- render 'color-palette' -%}
+    {%- render 'capte-head' -%}
 
     {% if request.design_mode %}
       {%- render 'theme-editor' -%}
