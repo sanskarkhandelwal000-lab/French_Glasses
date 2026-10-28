@@ -67,6 +67,13 @@
             "question": "Comment vous contacter ?",
             "answer": "<p>Utilisez le <a href=\"/pages/contact\">formulaire de contact</a> ou écrivez-nous à <a href=\"mailto:contact.captelunettes@gmail.com\">contact.captelunettes@gmail.com</a>. Nous répondons en français.</p>"
           }
+        },
+        "q8": {
+          "type": "item",
+          "settings": {
+            "question": "Quels sont les délais de livraison ?",
+            "answer": "<p>📦 Livraison estimée entre 8 et 12 jours ouvrés après expédition.</p>"
+          }
         }
       },
       "block_order": [
@@ -76,7 +83,8 @@
         "q4",
         "q5",
         "q6",
-        "q7"
+        "q7",
+        "q8"
       ],
       "settings": {
         "eyebrow": "Questions",

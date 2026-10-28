@@ -17,6 +17,9 @@
       </li>
     {%- endif -%}
   {%- endfor -%}
+  {%- if block.settings.delivery != blank -%}
+    <li class="capte-pdp-assure__delivery">{{ block.settings.delivery }}</li>
+  {%- endif -%}
 </ul>
 
 {% schema %}
@@ -25,7 +28,8 @@
   "settings": [
     { "type": "text", "id": "item_1", "label": "Item 1", "default": "Paiement sécurisé" },
     { "type": "text", "id": "item_2", "label": "Item 2", "default": "Retours 14 jours" },
-    { "type": "text", "id": "item_3", "label": "Item 3", "default": "Garantie 2 ans" }
+    { "type": "text", "id": "item_3", "label": "Item 3", "default": "Garantie 2 ans" },
+    { "type": "text", "id": "delivery", "label": "Delivery information", "default": "📦 Livraison estimée entre 8 et 12 jours ouvrés après expédition." }
   ],
   "presets": [{ "name": "Capté — Réassurance" }]
 }
