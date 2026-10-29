@@ -71,8 +71,8 @@
         "q8": {
           "type": "item",
           "settings": {
-            "question": "Quels sont les délais de livraison ?",
-            "answer": "<p>📦 Livraison estimée entre 8 et 12 jours ouvrés après expédition.</p>"
+            "question": "Quels sont les frais et délais de livraison ?",
+            "answer": "<p>🚚 Livraison offerte partout en France.</p><p>📦 Livraison estimée entre 8 et 12 jours ouvrés après expédition.</p>"
           }
         }
       },

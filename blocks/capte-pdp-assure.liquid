@@ -17,6 +17,9 @@
       </li>
     {%- endif -%}
   {%- endfor -%}
+  {%- if block.settings.free_shipping != blank -%}
+    <li class="capte-pdp-assure__delivery">{{ block.settings.free_shipping }}</li>
+  {%- endif -%}
   {%- if block.settings.delivery != blank -%}
     <li class="capte-pdp-assure__delivery">{{ block.settings.delivery }}</li>
   {%- endif -%}
@@ -29,6 +32,7 @@
     { "type": "text", "id": "item_1", "label": "Item 1", "default": "Paiement sécurisé" },
     { "type": "text", "id": "item_2", "label": "Item 2", "default": "Retours 14 jours" },
     { "type": "text", "id": "item_3", "label": "Item 3", "default": "Garantie 2 ans" },
+    { "type": "text", "id": "free_shipping", "label": "Free shipping line", "default": "🚚 Livraison offerte partout en France." },
     { "type": "text", "id": "delivery", "label": "Delivery information", "default": "📦 Livraison estimée entre 8 et 12 jours ouvrés après expédition." }
   ],
   "presets": [{ "name": "Capté — Réassurance" }]
