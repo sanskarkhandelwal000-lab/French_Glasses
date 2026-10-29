@@ -1,0 +1,44 @@
+<section class="capte capte-marquee{% if section.settings.dark %} capte--dark{% endif %}" aria-label="{{ section.settings.label | escape }}" lang="fr">
+  <div class="capte-marquee__track">
+    {%- for i in (1..2) -%}
+      <ul class="capte-marquee__group" role="list" {% if i == 2 %}aria-hidden="true"{% endif %}>
+        {%- for block in section.blocks -%}
+          <li {% if i == 1 %}{{ block.shopify_attributes }}{% endif %}>
+            {{ block.settings.text }}<span class="capte-marquee__dot" aria-hidden="true"></span>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Capté — Défilé",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Accessible label", "default": "Fonctions Capté" },
+    { "type": "checkbox", "id": "dark", "label": "Dark background", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Élément",
+      "settings": [{ "type": "text", "id": "text", "label": "Text", "default": "Mains libres" }]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Capté — Défilé",
+      "blocks": [
+        { "type": "item", "settings": { "text": "Caméra 8 MP" } },
+        { "type": "item", "settings": { "text": "Mains libres" } },
+        { "type": "item", "settings": { "text": "Traduction par IA" } },
+        { "type": "item", "settings": { "text": "Musique et appels" } },
+        { "type": "item", "settings": { "text": "Assistant IA" } },
+        { "type": "item", "settings": { "text": "Marque française" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

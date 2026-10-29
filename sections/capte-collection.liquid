@@ -1,0 +1,72 @@
+{%- liquid
+  assign accent = '#8A8590'
+  assign eyebrow = 'La collection'
+  if collection.handle contains 'glisse'
+    assign accent = '#8EC5E8'
+    assign eyebrow = 'Ski & montagne'
+  elsif collection.handle contains 'soleil'
+    assign accent = '#FFB23E'
+    assign eyebrow = 'Été & plein air'
+  elsif collection.handle contains 'clair'
+    assign accent = '#CFD6DE'
+    assign eyebrow = 'Au quotidien'
+  endif
+  assign cols = section.settings.per_page
+-%}
+
+<section class="capte capte-collection" lang="fr" style="--accent: {{ accent }};">
+  <div class="capte__wrap">
+    <header class="capte-collection__head capte-reveal">
+      <p class="capte__eyebrow capte-collection__eyebrow"><span class="capte__rec" aria-hidden="true"></span>{{ eyebrow }}</p>
+      <h1 class="capte__title capte__title--xl">{% if collection.handle == 'all' %}Toutes les lunettes{% else %}{{ collection.title }}{% endif %}</h1>
+      {%- if collection.description != blank -%}
+        <div class="capte-collection__desc">{{ collection.description }}</div>
+      {%- endif -%}
+      <p class="capte-collection__count">{{ collection.products_count }} {% if collection.products_count > 1 %}modèles{% else %}modèle{% endif %}</p>
+    </header>
+
+    {%- paginate collection.products by cols -%}
+      {%- if collection.products.size > 0 -%}
+        <ul class="capte-products__grid capte-collection__grid" role="list">
+          {%- for product in collection.products -%}
+            {%- render 'capte-product-card', product: product -%}
+          {%- endfor -%}
+        </ul>
+        {%- if paginate.pages > 1 -%}
+          <nav class="capte-collection__pager" aria-label="Pagination">
+            {%- if paginate.previous -%}<a class="capte__btn capte__btn--ghost" href="{{ paginate.previous.url }}">Précédent</a>{%- endif -%}
+            <span>{{ paginate.current_page }} / {{ paginate.pages }}</span>
+            {%- if paginate.next -%}<a class="capte__btn capte__btn--ghost" href="{{ paginate.next.url }}">Suivant</a>{%- endif -%}
+          </nav>
+        {%- endif -%}
+      {%- else -%}
+        <div class="capte-collection__empty">
+          <p>Cette collection arrive bientôt.</p>
+          <a class="capte__btn capte__btn--primary" href="{{ routes.all_products_collection_url }}">Voir toutes les lunettes</a>
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+
+    <nav class="capte-collection__sibs" aria-label="Gammes">
+      <a href="{{ routes.all_products_collection_url }}"{% if collection.handle == 'all' %} aria-current="page"{% endif %}>Toutes les lunettes</a>
+      {%- assign sibs = 'capte-glisse,capte-soleil,capte-clair' | split: ',' -%}
+      {%- assign dots = '#8EC5E8,#FFB23E,#CFD6DE' | split: ',' -%}
+      {%- for handle in sibs -%}
+        {%- assign sib = collections[handle] -%}
+        {%- if sib != blank and sib.handle != blank -%}
+          <a href="{{ sib.url }}"{% if collection.handle == sib.handle %} aria-current="page"{% endif %} style="--dot: {{ dots[forloop.index0] }}">{{ sib.title }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+    </nav>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Capté — Collection",
+  "tag": "div",
+  "settings": [
+    { "type": "range", "id": "per_page", "label": "Products per page", "min": 6, "max": 24, "step": 3, "default": 12 }
+  ]
+}
+{% endschema %}

@@ -19,10 +19,32 @@
 >
 
 {%- liquid
-  assign og_title = page_title | default: shop.name
+  assign capte_brand = 'Capté'
+  assign capte_tagline = 'Lunettes caméra françaises'
+  assign capte_description = 'Capté, lunettes caméra françaises : photo et vidéo en vue subjective, traduction par IA, musique et appels, mains libres. Pour le ski, le soleil et le quotidien. Tout est capté.'
+  assign og_title = page_title | default: capte_brand
+  if request.page_type == 'index'
+    assign og_title = capte_brand | append: ' · ' | append: capte_tagline
+  elsif request.page_type == 'cart'
+    assign page_title = 'Panier'
+  elsif request.page_type == 'search'
+    assign page_title = 'Recherche'
+    if search.performed
+      assign page_title = 'Recherche : ' | append: search.terms
+    endif
+  elsif request.page_type == '404'
+    assign page_title = 'Page introuvable'
+  elsif request.page_type == 'collection' and collection.handle == 'all'
+    assign page_title = 'Toutes les lunettes'
+  elsif request.page_type == 'list-collections'
+    assign page_title = 'Les gammes'
+  endif
+  if request.page_type != 'index'
+    assign og_title = page_title | default: capte_brand
+  endif
   assign og_url = canonical_url | default: request.origin
   assign og_type = 'website'
-  assign og_description = page_description | default: shop.description | default: shop.name
+  assign og_description = page_description | default: capte_description
 
   if request.page_type == 'product'
     assign og_type = 'product'
@@ -35,7 +57,7 @@
 
 <meta
   property="og:site_name"
-  content="{{ shop.name }}"
+  content="{{ capte_brand }}"
 >
 <meta
   property="og:url"
@@ -71,6 +93,27 @@
     property="og:image:height"
     content="{{ page_image.height }}"
   >
+{%- else -%}
+  <meta
+    property="og:image"
+    content="https:{{ 'capte-og.jpg' | asset_url }}"
+  >
+  <meta
+    property="og:image:secure_url"
+    content="https:{{ 'capte-og.jpg' | asset_url }}"
+  >
+  <meta
+    property="og:image:width"
+    content="1200"
+  >
+  <meta
+    property="og:image:height"
+    content="630"
+  >
+  <meta
+    name="twitter:image"
+    content="https:{{ 'capte-og.jpg' | asset_url }}"
+  >
 {%- endif -%}
 
 {%- if request.page_type == 'product' -%}
@@ -104,10 +147,14 @@
 >
 
 <title>
-  {{ page_title }}
-  {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-  {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-  {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  {%- if request.page_type == 'index' -%}
+    {{ capte_brand }} &middot; {{ capte_tagline }}
+  {%- else -%}
+    {{ page_title }}
+    {%- if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif -%}
+    {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+    {%- unless page_title contains capte_brand %} &ndash; {{ capte_brand }}{% endunless -%}
+  {%- endif -%}
 </title>
 
 <link
@@ -115,9 +162,7 @@
   href="{{ canonical_url }}"
 >
 
-{% if page_description %}
-  <meta
-    name="description"
-    content="{{ page_description | escape }}"
-  >
-{% endif %}
+<meta
+  name="description"
+  content="{{ og_description | escape }}"
+>

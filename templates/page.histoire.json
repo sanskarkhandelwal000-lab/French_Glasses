@@ -1,0 +1,79 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */{
+  "sections": {
+    "head": {
+      "type": "capte-page-head",
+      "settings": {
+        "eyebrow": "Notre histoire",
+        "heading": "Capté, c'est *vivre le moment*.",
+        "text": "Une marque française de lunettes caméra : on garde les plus beaux moments sans quitter le moment."
+      }
+    },
+    "story": {
+      "type": "capte-story",
+      "blocks": {
+        "v1": {
+          "type": "value",
+          "settings": {
+            "title": "Vrai",
+            "text": "De vraies images, de vraies fonctions, de vrais prix."
+          }
+        },
+        "v2": {
+          "type": "value",
+          "settings": {
+            "title": "Libre",
+            "text": "Mains libres, pour vivre le moment."
+          }
+        },
+        "v3": {
+          "type": "value",
+          "settings": {
+            "title": "Respectueux",
+            "text": "On filme ses aventures et ses proches, jamais des inconnus."
+          }
+        },
+        "v4": {
+          "type": "value",
+          "settings": {
+            "title": "Proche",
+            "text": "Une marque française qui vous répond en français."
+          }
+        }
+      },
+      "block_order": [
+        "v1",
+        "v2",
+        "v3",
+        "v4"
+      ],
+      "settings": {
+        "use_bundled_image": true,
+        "heading": "Les plus beaux moments ne se vivent pas *derrière un écran*.",
+        "eyebrow": "Pourquoi Capté"
+      }
+    },
+    "more": {
+      "type": "capte-products",
+      "settings": {
+        "eyebrow": "La collection",
+        "heading": "Choisissez *votre regard*.",
+        "limit": 3,
+        "link_label": "Tout voir",
+        "dark": false
+      }
+    }
+  },
+  "order": [
+    "head",
+    "story",
+    "more"
+  ]
+}
