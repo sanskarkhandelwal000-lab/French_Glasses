@@ -282,11 +282,33 @@
             },
             "capte_details": {
               "type": "capte-pdp-details",
-              "settings": {}
+              "settings": {
+                "spec_1_value": "8 MP",
+                "spec_1_label": "Photo et vidéo",
+                "spec_2_value": "IA",
+                "spec_2_label": "Traduction et assistant",
+                "spec_3_value": "Mains libres",
+                "spec_3_label": "Musique et appels",
+                "title_1": "Caractéristiques",
+                "content_1": "<p>Caméra 8 MP intégrée pour la photo et la vidéo en vue subjective. Traduction par IA, musique, appels et assistant vocal, mains libres.</p>",
+                "title_2": "Usage respectueux",
+                "content_2": "<p>On filme ses aventures et ses proches, jamais des inconnus. Respectez toujours les personnes autour de vous et la réglementation en vigueur.</p>",
+                "title_3": "Retours",
+                "content_3": "<p>Vous disposez d'un délai de rétractation de 14 jours après réception, conformément au droit européen de la consommation.</p>",
+                "title_4": "Garantie",
+                "content_4": "<p>Garantie légale de conformité de 2 ans, comme pour tout achat en France.</p>",
+                "virtual_notice": "Images virtuelles : les visuels de cette page sont générés par IA et illustratifs. Le produit livré peut présenter de légères différences."
+              }
             },
             "capte_assure": {
               "type": "capte-pdp-assure",
-              "settings": {}
+              "settings": {
+                "item_1": "Paiement sécurisé",
+                "item_2": "Retours 14 jours",
+                "item_3": "Garantie 2 ans",
+                "free_shipping": "🚚 Livraison offerte partout en France.",
+                "delivery": "📦 Livraison estimée entre 8 et 12 jours ouvrés après expédition."
+              }
             }
           },
           "block_order": [

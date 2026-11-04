@@ -3,7 +3,7 @@
   {% if request.design_mode %}
     class="shopify-design-mode"
   {% endif %}
-  lang="fr"
+  lang="{{ request.locale.iso_code }}"
 >
   <head>
     {%- if settings.favicon != blank -%}

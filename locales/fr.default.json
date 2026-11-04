@@ -8,6 +8,23 @@
  * ------------------------------------------------------------
  */
 {
+  "capte": {
+      "all_glasses": "Toutes les lunettes",
+      "models": "modèles",
+      "model": "modèle",
+      "previous": "Précédent",
+      "next": "Suivant",
+      "coming_soon": "Cette collection arrive bientôt.",
+      "view_all_glasses": "Voir toutes les lunettes",
+      "from": "À partir de",
+      "tagline": "Lunettes caméra françaises",
+      "description": "Capté, lunettes caméra françaises : photo et vidéo en vue subjective, traduction par IA, musique et appels, mains libres. Pour le ski, le soleil et le quotidien. Tout est capté.",
+      "cart": "Panier",
+      "search": "Recherche",
+      "search_for": "Recherche : ",
+      "not_found": "Page introuvable",
+      "ranges": "Les gammes"
+  },
   "accessibility": {
     "account": "Compte",
     "active_filters": "Activez des filtres :",

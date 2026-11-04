@@ -18,11 +18,11 @@
   <div class="capte__wrap">
     <header class="capte-collection__head capte-reveal">
       <p class="capte__eyebrow capte-collection__eyebrow"><span class="capte__rec" aria-hidden="true"></span>{{ eyebrow }}</p>
-      <h1 class="capte__title capte__title--xl">{% if collection.handle == 'all' %}Toutes les lunettes{% else %}{{ collection.title }}{% endif %}</h1>
+      <h1 class="capte__title capte__title--xl">{% if collection.handle == 'all' %}{{ 'capte.all_glasses' | t }}{% else %}{{ collection.title }}{% endif %}</h1>
       {%- if collection.description != blank -%}
         <div class="capte-collection__desc">{{ collection.description }}</div>
       {%- endif -%}
-      <p class="capte-collection__count">{{ collection.products_count }} {% if collection.products_count > 1 %}modèles{% else %}modèle{% endif %}</p>
+      <p class="capte-collection__count">{{ collection.products_count }} {% if collection.products_count > 1 %}{{ 'capte.models' | t }}{% else %}{{ 'capte.model' | t }}{% endif %}</p>
     </header>
 
     {%- paginate collection.products by cols -%}
@@ -34,21 +34,21 @@
         </ul>
         {%- if paginate.pages > 1 -%}
           <nav class="capte-collection__pager" aria-label="Pagination">
-            {%- if paginate.previous -%}<a class="capte__btn capte__btn--ghost" href="{{ paginate.previous.url }}">Précédent</a>{%- endif -%}
+            {%- if paginate.previous -%}<a class="capte__btn capte__btn--ghost" href="{{ paginate.previous.url }}">{{ 'capte.previous' | t }}</a>{%- endif -%}
             <span>{{ paginate.current_page }} / {{ paginate.pages }}</span>
-            {%- if paginate.next -%}<a class="capte__btn capte__btn--ghost" href="{{ paginate.next.url }}">Suivant</a>{%- endif -%}
+            {%- if paginate.next -%}<a class="capte__btn capte__btn--ghost" href="{{ paginate.next.url }}">{{ 'capte.next' | t }}</a>{%- endif -%}
           </nav>
         {%- endif -%}
       {%- else -%}
         <div class="capte-collection__empty">
-          <p>Cette collection arrive bientôt.</p>
-          <a class="capte__btn capte__btn--primary" href="{{ routes.all_products_collection_url }}">Voir toutes les lunettes</a>
+          <p>{{ 'capte.coming_soon' | t }}</p>
+          <a class="capte__btn capte__btn--primary" href="{{ routes.all_products_collection_url }}">{{ 'capte.view_all_glasses' | t }}</a>
         </div>
       {%- endif -%}
     {%- endpaginate -%}
 
     <nav class="capte-collection__sibs" aria-label="Gammes">
-      <a href="{{ routes.all_products_collection_url }}"{% if collection.handle == 'all' %} aria-current="page"{% endif %}>Toutes les lunettes</a>
+      <a href="{{ routes.all_products_collection_url }}"{% if collection.handle == 'all' %} aria-current="page"{% endif %}>{{ 'capte.all_glasses' | t }}</a>
       {%- assign sibs = 'capte-glisse,capte-soleil,capte-clair' | split: ',' -%}
       {%- assign dots = '#8EC5E8,#FFB23E,#CFD6DE' | split: ',' -%}
       {%- for handle in sibs -%}

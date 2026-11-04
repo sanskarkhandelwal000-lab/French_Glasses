@@ -20,24 +20,24 @@
 
 {%- liquid
   assign capte_brand = 'Capté'
-  assign capte_tagline = 'Lunettes caméra françaises'
-  assign capte_description = 'Capté, lunettes caméra françaises : photo et vidéo en vue subjective, traduction par IA, musique et appels, mains libres. Pour le ski, le soleil et le quotidien. Tout est capté.'
+  assign capte_tagline = 'capte.tagline' | t
+  assign capte_description = 'capte.description' | t
   assign og_title = page_title | default: capte_brand
   if request.page_type == 'index'
     assign og_title = capte_brand | append: ' · ' | append: capte_tagline
   elsif request.page_type == 'cart'
-    assign page_title = 'Panier'
+    assign page_title = 'capte.cart' | t
   elsif request.page_type == 'search'
-    assign page_title = 'Recherche'
+    assign page_title = 'capte.search' | t
     if search.performed
-      assign page_title = 'Recherche : ' | append: search.terms
+      assign page_title = 'capte.search_for' | t | append: search.terms
     endif
   elsif request.page_type == '404'
-    assign page_title = 'Page introuvable'
+    assign page_title = 'capte.not_found' | t
   elsif request.page_type == 'collection' and collection.handle == 'all'
-    assign page_title = 'Toutes les lunettes'
+    assign page_title = 'capte.all_glasses' | t
   elsif request.page_type == 'list-collections'
-    assign page_title = 'Les gammes'
+    assign page_title = 'capte.ranges' | t
   endif
   if request.page_type != 'index'
     assign og_title = page_title | default: capte_brand

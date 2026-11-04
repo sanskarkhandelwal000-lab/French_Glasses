@@ -59,7 +59,7 @@
       <h3 class="capte-card__title">{{ product.title }}</h3>
       <p class="capte-card__price">
         {%- if product.price_varies -%}
-          À partir de {{ product.price_min | money -}}
+          {{ 'capte.from' | t }} {{ product.price_min | money -}}
         {%- else -%}
           {{- product.price | money -}}
         {%- endif -%}
