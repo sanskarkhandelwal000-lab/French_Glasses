@@ -752,6 +752,9 @@ body {
 .capte-footer__cols { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); }
 .capte-footer__col-title { margin: 0 0 1.1rem; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--capte-galet); }
 .capte-footer__col ul { display: grid; gap: 0.8rem; margin: 0; padding: 0; list-style: none; }
+/* Long links (the contact email) must wrap instead of widening the page on phones. */
+.capte-footer__col { min-width: 0; }
+.capte-footer__col li, .capte-footer__col a { min-width: 0; overflow-wrap: anywhere; }
 .capte-footer a { color: rgba(244, 241, 236, 0.8); text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: color 0.3s var(--capte-ease), background-size 0.5s var(--capte-ease); }
 .capte-footer a:hover { color: var(--capte-creme); background-size: 100% 1px; }
 .capte-footer a:focus-visible { outline: 2px solid var(--capte-rec); outline-offset: 3px; }
@@ -1381,3 +1384,16 @@ html[lang="en"] .capte__display { font-size: clamp(2.1rem, 8.4vw, 8.4rem); }
 .facets--horizontal .facets__item { display: none; }
 
 .capte-pdp-assure__delivery { flex-basis: 100%; padding-top: 0.25rem; font-size: 0.82rem; color: var(--capte-text); }
+
+/* Market suggestion banner (snippets/capte-geo-banner.liquid) */
+.capte-geo { position: fixed; z-index: 50; left: 16px; right: 16px; bottom: 16px; margin: 0 auto; max-width: 720px; box-sizing: border-box;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px;
+  padding: 14px 18px; border-radius: 18px; background: var(--capte-encre, #15151B); color: var(--capte-creme, #F4F1EC);
+  border: 1px solid rgba(244,241,236,.14); box-shadow: 0 18px 50px rgba(0,0,0,.45); font-size: .95rem; }
+.capte-geo[hidden] { display: none; }
+.capte-geo__text { margin: 0; flex: 1 1 260px; }
+.capte-geo__actions { display: flex; align-items: center; gap: 14px; }
+.capte-geo__actions form { margin: 0; }
+.capte-geo__go { white-space: nowrap; }
+.capte-geo__close { background: none; border: 0; color: inherit; opacity: .7; text-decoration: underline; cursor: pointer; font: inherit; padding: 6px 2px; }
+.capte-geo__close:hover { opacity: 1; }
