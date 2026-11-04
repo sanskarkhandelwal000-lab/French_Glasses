@@ -14,7 +14,15 @@
     "capte_footer": {
       "type": "capte-footer",
       "settings": {
-        "news_heading": "Restez dans *le cadre*."
+        "news_heading": "Restez dans *le cadre*.",
+        "news_eyebrow": "Newsletter",
+        "news_text": "Nouveautés, conseils et coulisses de Capté, directement dans votre boîte mail.",
+        "news_placeholder": "Votre adresse e-mail",
+        "news_button": "Je m'inscris",
+        "news_success": "Merci, c'est capté. À très vite dans votre boîte mail.",
+        "nav_label": "Pied de page",
+        "legal_name": "Capté",
+        "tagline": "Tout est capté."
       },
       "blocks": {
         "c1": {

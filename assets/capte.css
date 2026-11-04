@@ -798,6 +798,8 @@ body {
 
 .capte-footer .capte-hl { background-image: linear-gradient(100deg, var(--capte-rec), var(--capte-ambre)); }
 
+/* English words ("CAPTURED.") run longer than the French ones. */
+html[lang="en"] .capte__display { font-size: clamp(2.1rem, 8.4vw, 8.4rem); }
 .capte__display .capte-hl { background-image: linear-gradient(100deg, var(--capte-creme), var(--capte-rec)); }
 
 @supports not ((-webkit-background-clip: text) or (background-clip: text)) {

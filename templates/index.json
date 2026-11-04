@@ -39,7 +39,13 @@
         "s3"
       ],
       "settings": {
-        "use_theme_video": true
+        "use_theme_video": true,
+        "eyebrow": "Lunettes caméra françaises",
+        "heading": "Tout est capté.",
+        "subheading": "Filmez ce que vous voyez, mains libres, sans quitter le moment.",
+        "primary_label": "Découvrir la collection",
+        "secondary_label": "Nos gammes",
+        "virtual_notice": "Images virtuelles"
       }
     },
     "capte_lines": {
@@ -53,7 +59,8 @@
             "description": "Des masques de ski caméra pour garder chaque piste. « Chaque piste, captée. »",
             "accent": "#8EC5E8",
             "link": "shopify://collections/all",
-            "asset_image": "capte-glisse"
+            "asset_image": "capte-glisse",
+            "cta": "Découvrir"
           }
         },
         "l2": {
@@ -64,7 +71,8 @@
             "description": "Des lunettes de soleil connectées pour garder chaque été. « L'été, capté. »",
             "accent": "#FFB23E",
             "link": "shopify://collections/all",
-            "asset_image": "capte-soleil"
+            "asset_image": "capte-soleil",
+            "cta": "Découvrir"
           }
         },
         "l3": {
@@ -75,7 +83,8 @@
             "description": "Des lunettes connectées à verres clairs pour votre quotidien. « Votre quotidien, capté. »",
             "accent": "#CFD6DE",
             "link": "shopify://collections/all",
-            "asset_image": "capte-clair"
+            "asset_image": "capte-clair",
+            "cta": "Découvrir"
           }
         }
       },
@@ -150,7 +159,9 @@
         "f6"
       ],
       "settings": {
-        "heading": "Vos lunettes deviennent *votre caméra*."
+        "heading": "Vos lunettes deviennent *votre caméra*.",
+        "eyebrow": "Fonctions",
+        "lead": "Photo, vidéo, musique, appels et assistant IA : tout ce qu'il faut, sans sortir votre téléphone."
       }
     },
     "capte_story": {
@@ -193,7 +204,11 @@
       ],
       "settings": {
         "use_bundled_image": true,
-        "heading": "Les plus beaux moments ne se vivent pas *derrière un écran*."
+        "heading": "Les plus beaux moments ne se vivent pas *derrière un écran*.",
+        "eyebrow": "À propos",
+        "text": "<p>Capté est né d'une idée simple : une descente dans la poudreuse, un coucher de soleil entre amis, une conversation à l'autre bout du monde… On sort son téléphone, on cadre, et l'instant est déjà passé.</p><p>Avec Capté, vos lunettes deviennent votre caméra. Vous filmez ce que vous voyez, mains libres, sans quitter le moment.</p><p>Nous sommes une marque française, transparente sur nos produits, proche de nos clients et attachée à un usage respectueux : on filme ses aventures, pas les autres.</p>",
+        "signature": "Capté. Tout est capté.",
+        "image_alt": "Un skieur de dos sur une crête enneigée, face à une mer de nuages au coucher du soleil"
       }
     },
     "capte_faq": {
@@ -235,14 +250,19 @@
         "q4"
       ],
       "settings": {
-        "heading": "T’as *capté* ? On vous explique."
+        "heading": "T’as *capté* ? On vous explique.",
+        "eyebrow": "Questions"
       }
     },
     "capte_products": {
       "type": "capte-products",
       "settings": {
         "heading": "Choisissez *votre regard*.",
-        "pinned_products": ["capte-clair-mt5"]
+        "pinned_products": [
+          "capte-clair-mt5"
+        ],
+        "eyebrow": "La collection",
+        "link_label": "Tout voir"
       }
     },
     "capte_manifesto": {
@@ -258,7 +278,8 @@
     "capte_marquee": {
       "type": "capte-marquee",
       "settings": {
-        "dark": true
+        "dark": true,
+        "label": "Fonctions Capté"
       },
       "blocks": {
         "m0": {

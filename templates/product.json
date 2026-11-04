@@ -396,7 +396,11 @@
         "f5",
         "f6"
       ],
-      "settings": {}
+      "settings": {
+        "eyebrow": "Fonctions",
+        "heading": "Vos lunettes deviennent votre caméra.",
+        "lead": "Photo, vidéo, musique, appels et assistant IA : tout ce qu'il faut, sans sortir votre téléphone."
+      }
     },
     "capte_faq": {
       "type": "capte-faq",
@@ -436,7 +440,10 @@
         "q3",
         "q4"
       ],
-      "settings": {}
+      "settings": {
+        "eyebrow": "Questions",
+        "heading": "T'as capté ? On vous explique."
+      }
     },
     "capte_more": {
       "type": "capte-products",

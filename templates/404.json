@@ -98,7 +98,10 @@
         "eyebrow": "À découvrir",
         "heading": "Vous aimerez *aussi*.",
         "limit": 3,
-        "pinned_products": ["capte-clair-mt5"]
+        "pinned_products": [
+          "capte-clair-mt5"
+        ],
+        "link_label": "Tout voir"
       }
     }
   },

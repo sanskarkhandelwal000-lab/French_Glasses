@@ -57,7 +57,10 @@
       "settings": {
         "use_bundled_image": true,
         "heading": "Les plus beaux moments ne se vivent pas *derrière un écran*.",
-        "eyebrow": "Pourquoi Capté"
+        "eyebrow": "Pourquoi Capté",
+        "text": "<p>Capté est né d'une idée simple : une descente dans la poudreuse, un coucher de soleil entre amis, une conversation à l'autre bout du monde… On sort son téléphone, on cadre, et l'instant est déjà passé.</p><p>Avec Capté, vos lunettes deviennent votre caméra. Vous filmez ce que vous voyez, mains libres, sans quitter le moment.</p><p>Nous sommes une marque française, transparente sur nos produits, proche de nos clients et attachée à un usage respectueux : on filme ses aventures, pas les autres.</p>",
+        "signature": "Capté. Tout est capté.",
+        "image_alt": "Un skieur de dos sur une crête enneigée, face à une mer de nuages au coucher du soleil"
       }
     },
     "more": {
