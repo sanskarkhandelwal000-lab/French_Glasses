@@ -23,6 +23,7 @@
     {%- render 'scripts' -%}
     {%- render 'theme-styles-variables' -%}
     {%- render 'color-palette' -%}
+    {%- render 'capte-head' -%}
 
     {% if request.design_mode %}
       {%- render 'theme-editor' -%}
@@ -172,5 +173,6 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
+    {%- render 'capte-geo-banner' -%}
   </body>
 </html>

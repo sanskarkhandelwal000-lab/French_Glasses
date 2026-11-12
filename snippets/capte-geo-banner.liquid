@@ -1,0 +1,57 @@
+{%- comment -%}
+  Suggests the right market when the visitor's detected country belongs to
+  the other one: international visitors on the French site get an offer to
+  continue in English, French visitors on the international site get the
+  French site. Switching goes through Shopify's localization form, so cart
+  and checkout follow the chosen market. A dismissal is remembered.
+{%- endcomment -%}
+{%- liquid
+  assign current_country = localization.country.iso_code
+  assign home_country = 'FR'
+-%}
+<div class="capte-geo" id="CapteGeo" hidden role="region" aria-label="Region">
+  <p class="capte-geo__text" data-capte-geo-text></p>
+  <div class="capte-geo__actions">
+    {%- form 'localization', id: 'CapteGeoForm' -%}
+      <input type="hidden" name="country_code" value="" data-capte-geo-country>
+      <input type="hidden" name="locale_code" value="" data-capte-geo-locale>
+      <button type="submit" class="capte__btn capte__btn--primary capte-geo__go" data-capte-geo-go></button>
+    {%- endform -%}
+    <button type="button" class="capte-geo__close" data-capte-geo-close></button>
+  </div>
+</div>
+<script>
+  (function () {
+    var KEY = 'capte-geo-dismissed';
+    try { if (localStorage.getItem(KEY)) return; } catch (e) {}
+    var current = {{ current_country | json }};
+    var home = {{ home_country | json }};
+    var root = {{ request.locale.root_url | json }};
+    fetch((root === '/' ? '' : root) + '/browsing_context_suggestions.json?country[enabled]=true&country[exclude]=' + current)
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var c = d && d.detected_values && d.detected_values.country;
+        if (!c || !c.handle || c.handle === current) return;
+        var opts = (d.suggestions && d.suggestions[0] && d.suggestions[0].parts.country.options) || {};
+        if (!opts[c.handle]) return; // we don't sell there
+        var toHome = c.handle === home, fromHome = current === home;
+        if (!toHome && !fromHome) return; // both countries in the international market
+        var el = document.getElementById('CapteGeo');
+        var t = toHome
+          ? { text: 'Vous êtes en France ? Découvrez la boutique Capté en français.', go: 'Continuer en français', close: 'Rester ici', locale: 'fr' }
+          : { text: 'Shopping from ' + (function () { try { return new Intl.DisplayNames(['en'], { type: 'region' }).of(c.handle); } catch (e) { return c.name; } })() + '? Visit our store in English, with free worldwide shipping.', go: 'Continue in English', close: 'Stay here', locale: 'en' };
+        el.querySelector('[data-capte-geo-text]').textContent = t.text;
+        el.querySelector('[data-capte-geo-go]').textContent = t.go;
+        var close = el.querySelector('[data-capte-geo-close]');
+        close.textContent = t.close;
+        el.querySelector('[data-capte-geo-country]').value = c.handle;
+        el.querySelector('[data-capte-geo-locale]').value = t.locale;
+        close.addEventListener('click', function () {
+          el.hidden = true;
+          try { localStorage.setItem(KEY, '1'); } catch (e) {}
+        });
+        el.hidden = false;
+      })
+      .catch(function () {});
+  })();
+</script>

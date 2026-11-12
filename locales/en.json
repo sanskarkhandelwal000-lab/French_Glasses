@@ -8,6 +8,23 @@
  * ------------------------------------------------------------
  */
 {
+  "capte": {
+      "all_glasses": "All glasses",
+      "models": "models",
+      "model": "model",
+      "previous": "Previous",
+      "next": "Next",
+      "coming_soon": "This collection is coming soon.",
+      "view_all_glasses": "View all glasses",
+      "from": "From",
+      "tagline": "French camera glasses",
+      "description": "Capté, French camera glasses: point-of-view photo and video, AI translation, music and calls, hands-free. For skiing, sunshine and everyday life. Everything, captured.",
+      "cart": "Cart",
+      "search": "Search",
+      "search_for": "Search: ",
+      "not_found": "Page not found",
+      "ranges": "Our ranges"
+  },
   "accessibility": {
     "account": "Account",
     "active_filters": "Active filters:",

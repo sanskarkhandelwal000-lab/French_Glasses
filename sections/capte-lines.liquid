@@ -1,0 +1,77 @@
+<section class="capte capte__section" id="capte-lines" lang="fr">
+  <div class="capte__wrap">
+    <div class="capte-lines__head capte-reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="capte__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="capte__title capte__title--lg">{%- render 'capte-hl', text: section.settings.heading -%}</h2>
+    </div>
+
+    <div class="capte-lines__grid">
+      {%- for block in section.blocks -%}
+        <a
+          class="capte-line capte-reveal"
+          href="{{ block.settings.link | default: routes.all_products_collection_url }}"
+          style="--line: {{ block.settings.accent }};"
+          {{ block.shopify_attributes }}
+        >
+          <div class="capte-line__img">
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 1400
+                | image_tag: widths: '600, 900, 1400', sizes: '(min-width: 60em) 33vw, 100vw', loading: 'lazy', alt: block.settings.image.alt
+              }}
+            {%- elsif block.settings.asset_image != 'none' -%}
+              {%- render 'capte-asset-img', name: block.settings.asset_image, alt: block.settings.name, sizes: '(min-width: 60em) 33vw, 100vw' -%}
+            {%- endif -%}
+          </div>
+          <span class="capte-line__index" aria-hidden="true">0{{ forloop.index }}</span>
+          <div class="capte-line__body">
+            <span class="capte-line__tag">{{ block.settings.tag }}</span>
+            <h3 class="capte-line__name">{{ block.settings.name }}</h3>
+            <p class="capte-line__desc">{{ block.settings.description }}</p>
+            <span class="capte-line__cta">{{ block.settings.cta }} <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Capté — Gammes",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Trois gammes" },
+    { "type": "text", "id": "heading", "label": "Heading", "info": "Wrap words in *asterisks* to highlight them in colour.", "default": "Une promesse, trois façons de la vivre." }
+  ],
+  "blocks": [
+    {
+      "type": "line",
+      "name": "Gamme",
+      "settings": [
+        { "type": "text", "id": "tag", "label": "Tag", "default": "Ski & montagne" },
+        { "type": "text", "id": "name", "label": "Name", "default": "Capté Glisse" },
+        { "type": "textarea", "id": "description", "label": "Description", "default": "Des masques de ski caméra pour garder chaque piste." },
+        { "type": "text", "id": "cta", "label": "Link label", "default": "Découvrir" },
+        { "type": "url", "id": "link", "label": "Link" },
+        { "type": "color", "id": "accent", "label": "Accent colour", "default": "#8EC5E8" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "select", "id": "asset_image", "label": "Bundled image (used when no image is picked)", "options": [ { "value": "none", "label": "None" }, { "value": "capte-glisse", "label": "Glisse" }, { "value": "capte-soleil", "label": "Soleil" }, { "value": "capte-clair", "label": "Clair" } ], "default": "none" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Capté — Gammes",
+      "blocks": [
+        { "type": "line", "settings": { "tag": "Ski & montagne", "name": "Capté Glisse", "description": "Des masques de ski caméra pour garder chaque piste. « Chaque piste, captée. »", "accent": "#8EC5E8" } },
+        { "type": "line", "settings": { "tag": "Été & plein air", "name": "Capté Soleil", "description": "Des lunettes de soleil connectées pour garder chaque été. « L'été, capté. »", "accent": "#FFB23E" } },
+        { "type": "line", "settings": { "tag": "Au quotidien", "name": "Capté Clair", "description": "Des lunettes connectées à verres clairs pour votre quotidien. « Votre quotidien, capté. »", "accent": "#CFD6DE" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
