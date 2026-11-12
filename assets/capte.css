@@ -1397,3 +1397,10 @@ html[lang="en"] .capte__display { font-size: clamp(2.1rem, 8.4vw, 8.4rem); }
 .capte-geo__go { white-space: nowrap; }
 .capte-geo__close { background: none; border: 0; color: inherit; opacity: .7; text-decoration: underline; cursor: pointer; font: inherit; padding: 6px 2px; }
 .capte-geo__close:hover { opacity: 1; }
+
+/* Product videos are vertical (9:16): show the whole frame, on ink, instead of
+   cropping them to the square gallery stage. */
+.product-media deferred-media video,
+.product-media deferred-media img { background: var(--capte-encre, #15151B); }
+.product-media deferred-media video,
+.product-media deferred-media img { object-fit: contain !important; mix-blend-mode: normal !important; }
